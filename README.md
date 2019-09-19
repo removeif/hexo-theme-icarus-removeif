@@ -1,4 +1,4 @@
-**说在前面**
+### **说在前面**
 
 博客在icarus主题之上参照各网友博客，以及自己的一些想法做出的一些修改以及增加部分新元素。
 膜拜和感谢所有模块的原作者,orz👻,辛苦了。
@@ -44,9 +44,10 @@ comment:
 
 
 #### 3.影音数据文件：
-文件路径：音乐：themes/icarus/source/json_data/music.json
+文件路径： 
+音乐：themes/icarus/source/json_data/music.json 
 
-        视频：themes/icarus/source/json_data/video.json
+视频：themes/icarus/source/json_data/video.json
         
 相应格式配置就好。     
         
