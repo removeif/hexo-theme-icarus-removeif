@@ -1,6 +1,8 @@
 **说在前面**
+
 博客在icarus主题之上参照各网友博客，以及自己的一些想法做出的一些修改以及增加部分新元素。
 膜拜和感谢所有模块的原作者,orz👻,辛苦了。
+
 上线博客demo：[欢迎围观](https://removeif.github.io/)
 ### 部分配置说明：
 
@@ -43,7 +45,9 @@ comment:
 
 #### 3.影音数据文件：
 文件路径：音乐：themes/icarus/source/json_data/music.json
+
         视频：themes/icarus/source/json_data/video.json
+        
 相应格式配置就好。     
         
 #### 4.关于页面时间轴记录数据文件：
@@ -52,13 +56,15 @@ comment:
 相关的js在各自页面的.md文件中可以找到。
 
 #### 5.看板娘配置
-具体文章引用位置：   
+具体文章引用位置：themes/icarus/layout/layout.ejs  
  ```java
  39行 <script type="text/javascript" async="" src="/live2d/autoload.js"></script>
 ```
 不喜欢的可以直接删了，就不显示了。
+
 themes/icarus/source/live2d/waifu-tips.js 
 themes/icarus/source/live2d/autoload.js
+
 上面两个位置可以配置相关的显示，以及模型。
 
 #### 6.以上配置好后
@@ -67,6 +73,8 @@ themes/icarus/source/live2d/autoload.js
 #hexo g 编译 
 #hexo s 启动服务 
 #hexo d  推到远程 
+```
+
 
 enjoy！！！！👏👏👏👏👏👏👏
 
