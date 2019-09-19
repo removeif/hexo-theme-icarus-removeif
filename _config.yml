@@ -1,0 +1,131 @@
+# Hexo Configuration
+## Docs: https://hexo.io/docs/configuration.html
+## Source: https://github.com/hexojs/hexo/
+
+# Site
+title: 辣椒の酱
+subtitle: 尚未执佩剑，转眼即江湖
+description: 生活坏到一定程度就会好起来，因为它无法更坏
+keywords: java,elasticsearch,设计模式,sql
+author: 辣椒の酱
+language: zh-CN
+timezone:
+
+# URL
+## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
+url: https://removeif.github.io
+#root: /remove.io/
+root: /
+permalink: :year/:month/:day/:title.html #文章的 永久链接 格式	:year/:month/:day/:title/
+permalink_defaults:
+
+# Directory
+source_dir: source
+public_dir: public
+tag_dir: tags
+archive_dir: archives
+category_dir: categories
+code_dir: downloads/code
+i18n_dir: :lang
+skip_render:
+
+# Writing
+new_post_name: :title.md # File name of new posts
+default_layout: post
+titlecase: false # Transform title into titlecase
+external_link: true # Open external links in new tab
+filename_case: 0
+render_drafts: false
+post_asset_folder: false
+relative_link: false
+future: true
+highlight:
+  enable: true
+  line_number: true
+  auto_detect: false
+  tab_replace:
+  
+# Home page setting
+# path: Root path for your blogs index page. (default = '')
+# per_page: Posts displayed per page. (0 = disable pagination)
+# order_by: Posts order. (Order by date descending by default)
+index_generator:
+  path: ''
+  per_page: 10
+  order_by: -date
+  
+# Category & Tag
+default_category: uncategorized
+category_map:
+tag_map:
+
+# Date / Time format
+## Hexo uses Moment.js to parse and display date
+## You can customize the date format as defined in
+## http://momentjs.com/docs/#/displaying/format/
+date_format: YYYY-MM-DD
+time_format: HH:mm:ss
+
+# Pagination
+## Set per_page to 0 to disable pagination
+per_page: 10
+pagination_dir: page
+
+# Extensions
+## Plugins: https://hexo.io/plugins/
+## Themes: https://hexo.io/themes/
+theme: icarus
+#theme: next
+
+# Deployment
+## Docs: https://hexo.io/docs/deployment.html
+deploy:
+  type: git
+#  repo: https://github.com/removeif/remove.io.git
+  repo: https://github.com/removeif/removeif.github.io.git
+  branch: master
+
+search:
+  path: search.xml
+  field: post
+  format: html
+  limit: 10000
+
+
+sitemap:
+  path: sitemap.xml
+baidusitemap:
+  path: baidusitemap.xml
+
+baidu_url_submit:
+  count: 1 ## 提交最新的一个链接
+  host: https://removeif.github.io/ #在百度站长平台中注册的域名
+  token: xxxx #请注意这是您的秘钥，所以请不要把博客源代码发布在公众仓库里!
+  path: baidu_urls.txt #文本文档的地址， 新链接会保存在此文本文档里
+
+# Extensions
+## Plugins: http://hexo.io/plugins/
+#RSS订阅
+#Feed Atom
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+
+#操作说明 hexo new "文章名称"    新建文章
+
+#------------
+#操作说明 hexo new page "页面名称"    新建页面
+#    menu:
+#        主页: /
+#        归档: /archives
+#        分类: /categories
+#        标签: /tags
+#        留言板: /message
+#        关于: /about
+#------------
+
+#hexo clear 清除缓存 hc
+#hexo g 编译 hg
+#hexo s 启动服务 hs
+#hexo d  推到远程 hd

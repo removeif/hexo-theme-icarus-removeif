@@ -1,0 +1,15 @@
+<% if (page.path == 'index.html') { %>
+ <!-- 参考自https://dp2px.com/网站 -->
+<div class="tag is-white" style="font-size:15px;">热门推荐：</div>
+<br>
+<br>
+<div class="tags hot-tags" id = "index_hot_div">
+加载中，稍等几秒...
+</div>
+<% } %>
+<% page.posts.each(function(post){ %>
+    <%- partial('common/article', { post, index: true }) %>
+<% }); %>
+<% if (page.total > 1) { %>
+    <%- partial('common/paginator') %>
+<% } %>
