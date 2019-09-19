@@ -57,7 +57,7 @@ comment:
 相关的js在各自页面的.md文件中可以找到。
 
 #### 5.看板娘配置
-具体文章引用位置：themes/icarus/layout/layout.ejs  
+具体文件引用位置：themes/icarus/layout/layout.ejs  
  ```java
  39行 <script type="text/javascript" async="" src="/live2d/autoload.js"></script>
 ```
