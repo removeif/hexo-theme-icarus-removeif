@@ -82,7 +82,7 @@ theme: icarus
 deploy:
   type: git
 #  repo: https://github.com/removeif/remove.io.git
-  repo: https://github.com/removeif/removeif.github.io.git
+#  repo: https://github.com/removeif/removeif.github.io.git
   branch: master
 
 search:

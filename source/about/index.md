@@ -32,7 +32,7 @@ comments: false
 --*2019.09.14：增加[暗黑主题页面](https://removeif.github.io/remove.io/)*
 --*2019.09.18：修改友链ui为一行三个，并适配移动端，暗黑模式文章增加评论链接，增加留言链接*
 --*2019.09.19：修改布局，拉伸布局，更宽的展示*
---*2019.09.19：开源博客代码*
+--*2019.09.19：开源[博客代码](https://github.com/removeif/hexo-theme-icarus-removeif)*
 
 ---
 <br>

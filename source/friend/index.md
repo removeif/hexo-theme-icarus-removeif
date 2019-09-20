@@ -2,7 +2,7 @@
 thumbnail: http://wx2.sinaimg.cn/large/b5d1b710ly1g6tkoq1a10j212w0k17wh.jpg
 date: 2019-09-09 18:52:09
 ---
-<div style="color: #3273dc;font-weight: bold;">申请友链须知</div>
+<div class="friend-title-item">申请友链须知</div>
 + 原则上只和技术类博客交换，但不包括含有和色情、暴力、政治敏感的网站。
 + 不和剽窃、侵权、无诚信的网站交换，优先和具有原创作品的网站交换。
 + 申请链接前请先添加本博链接，通过留言告知。

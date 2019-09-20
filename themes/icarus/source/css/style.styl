@@ -721,14 +721,53 @@ figure.highlight
     -moz-osx-font-smoothing: grayscale;
 }
 
-.video-player .d-title {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    font-weight: 700;
-    text-align: center;
+
+.video-player {
+    .d-title {
+        margin-bottom: 20px;
+        font-size: 2rem;
+        font-weight: 700;
+        text-align: center;
+    }
+    .hits {
+        text-align: center;
+        font-size: 13px;
+        color: #cd0411
+    }
 }
 
+
 #video-list {
-  overflow-y: auto;
-  height: 300px;
+    overflow-y: auto;
+    height: 300px;
+    blockquote {
+        font-size: 13px;
+        text-align: center;
+        border-right: 3px solid #6190e8;
+    }
+}
+
+
+#body_hot_comment {
+    .comment-content {
+        overflow-x: auto;
+        margin-top: 5px;
+        margin-left: 4px;
+        .item {
+            margin-top: 5px;
+            background-color: #f9f9f9;
+            color: #3d3d3d;
+        }
+    }
+}
+
+
+.friend-title-item {
+    color: #3273dc;
+    font-weight: bold;
+}
+
+#musicarea {
+    margin: 20px auto;
+    width: 500px;
 }

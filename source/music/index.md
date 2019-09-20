@@ -9,7 +9,7 @@ thumbnail: http://wx1.sinaimg.cn/large/b5d1b710ly1g6s77l1eikj212w0gbn7r.jpg
                 <i class="fa fa-music"></i>&nbsp;&nbsp;听听音乐
         </div>
     </div>
-    <div id="musicarea" style="margin: 20px auto;width: 500px;">
+    <div id="musicarea">
         <div class="music"></div>
         <p id="p_message"><span id="music_story_message" class="span_animation"></span></p>
         <ul id="musiclist"></ul>
@@ -18,7 +18,6 @@ thumbnail: http://wx1.sinaimg.cn/large/b5d1b710ly1g6s77l1eikj212w0gbn7r.jpg
 <div>
 
 <link rel="stylesheet" href="/css/meplayer.min.css">
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script type="text/javascript" defer src="/js/meplayer.js"></script>
 <script type="text/javascript" defer src="/js/music.js"></script>
 
@@ -29,7 +28,7 @@ thumbnail: http://wx1.sinaimg.cn/large/b5d1b710ly1g6s77l1eikj212w0gbn7r.jpg
         <div class="d-title">
                 <i class="fa fa-video-camera"></i>&nbsp;&nbsp;看看视频
         </div>
-            <p style="text-align:center;font-size:13px;color: #cd0411">->点击以下条目开始播放视频,向下滑动查看更多<-</p>
+            <p class="hits">->点击以下条目开始播放视频,向下滑动查看更多<-</p>
             <div id="video-list"></div>
             <div id="dplayer">
             </div>

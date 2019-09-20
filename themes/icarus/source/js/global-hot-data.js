@@ -64,12 +64,12 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
 
         if (COMMENT_ARR.length > 0) {
             // 热门评论内容
-            var htmlContentWidget = "<h3 class=\"menu-label\">" + "最新评论<br></h3>" + "<div style='overflow-x:auto;margin-top:5px;margin-left:4px;'>";
+            var htmlContentWidget = "<h3 class=\"menu-label\">" + "最新评论<br></h3>" + "<div class='comment-content'>";
             for (var i = 0; i < COMMENT_ARR.length; i++) {
                 var item = COMMENT_ARR[i];
                 var contentStr = item.content;
                 htmlContentWidget +=
-                    "<div class=\"tag is-success\" style='margin-top: 5px;background-color:#f9f9f9;color:#3d3d3d;'>" + "<a href=\"" + item.userUrl + "\"target=\"_blank\">" + item.userName + "</a>&nbsp;" + ">&nbsp;" + "<a href =\"" + item.url + '#comment-container' + "\"target=\"_blank\">" + contentStr + "</a></div><br>";
+                    "<div class=\"tag is-success item\">" + "<a href=\"" + item.userUrl + "\"target=\"_blank\">" + item.userName + "</a>&nbsp;" + ">&nbsp;" + "<a href =\"" + item.url + '#comment-container' + "\"target=\"_blank\">" + contentStr + "</a></div><br>";
             }
             htmlContentWidget += "</div>"
             $("#body_hot_comment").html(htmlContentWidget);

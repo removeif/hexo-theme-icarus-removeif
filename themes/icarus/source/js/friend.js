@@ -21,7 +21,7 @@ $(function () { //获取处理友链数据
 
         var data0 = data[0];
 
-        $('.links-content').append("<div class=\"link-navigation\"><div style='color: #3273dc;font-weight: bold;'>本站友链信息【欢迎添加到自己的网站，需要交换友链请留言哦】</div>");
+        $('.links-content').append("<div class=\"link-navigation\"><div class='friend-title-item'>本站友链信息【欢迎添加到自己的网站，需要交换友链请留言哦】</div>");
         {
             var e = data0;
             var html = "<div class=\"cardm cardm-c\">";
@@ -34,11 +34,13 @@ $(function () { //获取处理友链数据
             $('.links-content').append(html);
         }
 
+        // 去掉第一个
         data.splice(0, 1);
+        // 随机排序
         data.sort(function (a, b) {
             return Math.random() > .5 ? -1 : 1;
         });
-        $('.links-content').append("<div style='color: #3273dc;font-weight: bold;'>好友们【排名不分先后，刷新后随机重排，友链信息有调整请留言告知】</div>");
+        $('.links-content').append("<div class='friend-title-item'>好友们【排名不分先后，刷新后随机重排，友链信息有调整请留言告知】</div>");
         $.each(data, function (i, e) {
             var html = "<div class=\"cardm\">";
             if (e.src == undefined) {
