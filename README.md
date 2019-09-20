@@ -20,6 +20,7 @@ v11.1.0
 git clone https://github.com/removeif/hexo-theme-icarus-removeif.git
 ```
 #### 开始部分配置：
+**首先全局以及主题中的_config.yml配置成自己的对应参数。**
 #### 1.热门推荐，最新评论：
 文件路径：themes/icarus/source/js/global-hot-data.js
 ```yaml
