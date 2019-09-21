@@ -20,7 +20,7 @@ v11.1.0
 git clone https://github.com/removeif/hexo-theme-icarus-removeif.git
 ```
 #### 开始部分配置：
-**首先全局以及主题中的_config.yml配置成自己的对应参数。**
+**敲黑板！！！！首先全局以及主题中的`_config.yml`配置成自己的对应参数。**
 #### 1.热门推荐，最新评论：
 文件路径：themes/icarus/source/js/global-hot-data.js
 ```yaml
@@ -79,7 +79,10 @@ $ hexo d #推到远程
 
 enjoy！！！！👏👏👏👏👏👏👏
 
-有什么问题，欢迎issue里讨论。
+### 写在后面
+如果你有问题请反馈: [issues](https://github.com/removeif/hexo-theme-icarus-removeif/issues) （请务必先于issues中寻找答案）  
+如果你喜欢该主题: [star](https://github.com/removeif/hexo-theme-icarus-removeif)  
+如果你想定制主题: [fork](https://github.com/removeif/hexo-theme-icarus-removeif) 
 
 ### License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/removeif/hexo-theme-icarus-removeif/master/LICENSE) file for details.
