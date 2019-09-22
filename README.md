@@ -6,6 +6,17 @@
 
 
 线上博客：[欢迎围观](https://removeif.github.io/)
+
+### icarus主题之上主要改动
++ 新增gitalk最新评论widget
++ 首页增加热门推荐
++ 增加弹性配置影音（可加音乐、视频）模块
++ 丰富弹性配置about页面
++ 新增弹性配置友链模块
++ 整体布局左右拉伸了一点，紧凑一些
++ 引入可配置看板娘
++ 归档页加入了一个文章贡献概览
+
 ### 部分配置说明：
 
 #### 本机环境：
@@ -39,7 +50,27 @@ comment:
     createIssueManually: true
 ```
 说明：热门推荐数据为评论数最多的文章，🔥后面的数字：根据文章的评论数*101 。  
-最新评论：为该仓库下，所有issue中的最新评论。
+最新评论：为该仓库下，所有issue中的最新评论。  
+如果不使用热门推荐，删掉themes/icarus/layout/index.ejs中以下代码
+```js
+<% if (page.path == 'index.html') { %>
+<div class="tag is-white" style="font-size:15px;">热门推荐：</div>
+<br>
+<br>
+<div class="tags hot-tags" id = "index_hot_div">
+加载中，稍等几秒...
+</div>
+<% } %>
+```
+如果不使用最新评论，删掉themes/icarus/_config.yml中中以下代码
+```yaml
+widgets:
+    -
+        # Widget name
+        type: hot_comment
+        # Where should the widget be placed, left or right
+        position: right
+```
 
 #### 2.友链数据文件：
 文件路径：themes/icarus/source/js/friend.js  
