@@ -125,6 +125,8 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 ### 博客快照：
 + 主页
 ![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221347.png)
++ 置顶
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190926210437.png)
 + 归档
 ![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221733.png)
 + 留言
