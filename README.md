@@ -120,16 +120,16 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 ### 博客快照：
 + 主页
-![](https://raw.githubusercontent.com/removeif/blog_image/master/img/2019/20190919221347.png)
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221347.png)
 + 归档
-![](https://raw.githubusercontent.com/removeif/blog_image/master/img/2019/20190919221733.png)
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221733.png)
 + 留言
-![](https://raw.githubusercontent.com/removeif/blog_image/master/img/2019/20190919221820.png)
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221820.png)
 + 友链
-![](https://raw.githubusercontent.com/removeif/blog_image/master/img/2019/20190919221917.png)
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221917.png)
 + 美图
-![](https://raw.githubusercontent.com/removeif/blog_image/master/img/2019/20190919221949.png)
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221949.png)
 + 影音
-![](https://raw.githubusercontent.com/removeif/blog_image/master/img/2019/20190919222030.png)
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919222030.png)
 + 关于
-![](https://raw.githubusercontent.com/removeif/blog_image/master/img/2019/20190919222131.png)
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919222131.png)
