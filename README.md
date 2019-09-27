@@ -150,7 +150,7 @@ enjoy！！！！👏👏👏👏👏👏👏
 如果你想定制主题: [fork](https://github.com/removeif/hexo-theme-icarus-removeif) 
 
 ### License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/removeif/hexo-theme-icarus-removeif/master/LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/removeif/hexo-theme-icarus-removeif/blob/master/LICENSE) file for details.
 
 ### 博客快照：
 + 主页
