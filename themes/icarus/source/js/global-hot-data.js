@@ -26,10 +26,10 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
                         contentStr = contentStr.substr(contentStr.lastIndexOf(">") + 1);
                     }
                     // 替换图片
-                    contentStr = contentStr.replace(/![\s\w\](?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\*\+,;=.]+\)/g, "[图片]");
+                    contentStr = contentStr.replace(/![\s\w\](?:http(s)?:\/\/)+[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\*\+,;=.]+\)/g, "[图片]");
 
                     // 替换网址
-                    contentStr = contentStr.replace(/(?:http(s)?:\/\/)?[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\*\+,;=.]+/g, "[网址]");
+                    contentStr = contentStr.replace(/(?:http(s)?:\/\/)+[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\*\+,;=.]+/g, "[网址]");
                     if (contentStr.length > 50) {
                         contentStr = contentStr.substr(0, 60);
                         contentStr += "...";
