@@ -655,6 +655,22 @@ figure.highlight
   margin-top: 15px;
 }
 
+.card-comment-item {
+    border-radius: 2px;
+    color: #4a4a4a;
+    //padding: 0.5rem;
+    display: inline-block;
+    //margin: 5px;
+    margin-top: 15px;
+    .ava {
+        width: 3rem !important;
+        height: 3rem !important;
+        margin: 0 !important;
+        margin-right: 0.2em !important;
+        border-radius: 40px;
+    }
+}
+
 .cardm-c {
     width: 42%;
 }
@@ -680,7 +696,7 @@ figure.highlight
     border-radius: 40px;
 
 }
-.cardm img {
+.cardm,.card-comment-item img {
     float left
     transition: all 0.5s ease-in;
     -webkit-transition: all 0.5s ease-in;
@@ -688,7 +704,7 @@ figure.highlight
     -o-transition: all 0.5s ease-in;
 }
 
-.cardm img:hover{
+.cardm,.card-comment-item img:hover{
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
@@ -750,14 +766,15 @@ figure.highlight
 
 #body_hot_comment {
     .comment-content {
-        overflow-x: auto;
+        //overflow-x: auto;
         margin-top: 5px;
         margin-left: 4px;
         .item {
+            margin-top: -4px;
             margin-bottom: -9px;
             background-color: #f9f9f900;
             color: #3d3d3d;
-            -webkit-line-clamp: 2;
+            -webkit-line-clamp: 3;
             text-overflow: ellipsis;
             overflow: hidden;
             height: auto;
