@@ -754,9 +754,17 @@ figure.highlight
         margin-top: 5px;
         margin-left: 4px;
         .item {
-            margin-top: 15px;
-            background-color: #f9f9f9;
+            margin-bottom: -9px;
+            background-color: #f9f9f900;
             color: #3d3d3d;
+            -webkit-line-clamp: 2;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            height: auto;
+            -webkit-box-orient: vertical;
+            word-break: break-all;
+            display: -webkit-box;
+            white-space: normal;
         }
     }
 }
@@ -774,16 +782,20 @@ figure.highlight
 
 //index hot css
 .tag:not(body).is-danger {
-    background-color: #0045b5;
+    background-color: #3273dc;
     color: #fff;
 }
 
 .tag:not(body).is-success {
-    background-color: #3273dc;
+    background-color: #5593f7;
     color: #fff;
 }
 
 .tag:not(body).is-warning {
     background-color: #8fb8fb;
     color: rgba(0, 0, 0, 0.7);
+}
+
+.tag:not(body).is-white1 {
+    background-color: #d9e6fd;
 }

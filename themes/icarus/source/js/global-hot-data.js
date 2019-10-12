@@ -84,14 +84,14 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
             $.getJSON("https://api.github.com/repos/removeif/blog_comment/issues?per_page=10&sort=comments", function (result) {
                 $.each(result, function (i, item) {
                     // 标签配色
-                    if (i % 4 == 0) {
+                    if (i >=0 & i<4) {
                         classDiv = "class=\"tag is-danger\"";
-                    } else if (i % 4 == 2) {
-                        classDiv = "class=\"tag is-warning\"";
-                    } else if (i % 4 == 1) {
+                    } else if (i >=4 & i<7) {
                         classDiv = "class=\"tag is-success\"";
+                    } else if (i >=7 & i<9) {
+                        classDiv = "class=\"tag is-warning\"";
                     } else {
-                        classDiv = "class=\"tag is-white\"";
+                        classDiv = "class=\"tag is-white is-white1\"";
                     }
                     hotContent += "<a href =\"" + item.body.substr(0, item.body.indexOf("\n") - 1) + "\"target=\"_blank\"" + classDiv + ">" + item.title.substr(0, item.title.indexOf("-") - 1) + "&nbsp;🔥" + (item.comments*101) + "</a>&nbsp;&nbsp;"
                 })
