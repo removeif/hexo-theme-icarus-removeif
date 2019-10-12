@@ -41,7 +41,7 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
 
         if (COMMENT_COOKIE != '') {
             console.log("load cache data...");
-            COMMENT = JSON.parse(COMMENT_COOKIE.split("=")[1]);
+            COMMENT = JSON.parse(COMMENT_COOKIE.split("commentV=")[1]);
             COMMENT_ARR = COMMENT["data"];
         }
 
@@ -93,7 +93,7 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
             resultMap["data"] = resultArr;
             COMMENT_ARR = resultArr;
             if (COMMENT_ARR.length > 0) {
-                document.cookie = "comment=" + JSON.stringify(resultMap) + ";path=/";
+                document.cookie = "commentV=" + JSON.stringify(resultMap) + ";path=/";
             }
         }
 
