@@ -35,8 +35,8 @@ git clone https://github.com/removeif/hexo-theme-icarus-removeif.git
 **敲黑板！！！！首先全局以及主题中的`_config.yml`配置成自己的对应参数。**
 #### 1.热门推荐，最新评论：
 文件路径：themes/icarus/source/js/global-hot-data.js
-```yaml
- 22行 https://api.github.com/repos/removeif/blog_comment/issues/comments?sort=created&direction=desc&per_page=10&page=1
+```xml
+https://api.github.com/repos/removeif/blog_comment/issues/comments?sort=created&direction=desc&per_page=10&page=1
  ```
 改成自己对于的博客评论的issues的仓库。
 对应主题中要开启gitalk评论，如下配置xxx换成自己的，否则无效。
@@ -91,8 +91,8 @@ widgets:
 
 #### 5.看板娘配置
 具体文件引用位置：themes/icarus/layout/layout.ejs  
- ```java
- 39行 <script type="text/javascript" async="" src="/live2d/autoload.js"></script>
+ ```js
+<script type="text/javascript" async="" src="/live2d/autoload.js"></script>
 ```
 不喜欢的可以直接删了，就不显示了。  
 themes/icarus/source/live2d/waifu-tips.js  
