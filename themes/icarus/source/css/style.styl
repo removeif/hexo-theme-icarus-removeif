@@ -697,7 +697,7 @@ figure.highlight
     border-radius: 40px;
 
 }
-.cardm,.card-comment-item img {
+.cardm img {
     float left
     transition: all 0.5s ease-in;
     -webkit-transition: all 0.5s ease-in;
@@ -705,7 +705,23 @@ figure.highlight
     -o-transition: all 0.5s ease-in;
 }
 
-.cardm,.card-comment-item img:hover{
+card-comment-item img {
+    float left
+    transition: all 0.5s ease-in;
+    -webkit-transition: all 0.5s ease-in;
+    -moz-transition: all 0.5s ease-in;
+    -o-transition: all 0.5s ease-in;
+}
+
+.cardm img:hover{
+    transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+}
+
+.card-comment-item img:hover{
     transform: rotate(360deg);
     -webkit-transform: rotate(360deg);
     -moz-transform: rotate(360deg);
