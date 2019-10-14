@@ -41,8 +41,13 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
 
         if (COMMENT_COOKIE != '') {
             console.log("load cache data...");
-            COMMENT = JSON.parse(COMMENT_COOKIE.split("commentV=")[1]);
-            COMMENT_ARR = COMMENT["data"];
+            // 异常不影响结果，继续往下执行
+            try {
+                COMMENT = JSON.parse(COMMENT_COOKIE.split("commentV=")[1]);
+                COMMENT_ARR = COMMENT["data"];
+            }catch (e) {
+                console.error(e);
+            }
         }
 
 
@@ -54,7 +59,7 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
             // sort=comments可以按评论数排序，此处更适合按更新时间排序,可以根据updated排序，但是0条评论的也会出来，所以此处还是全部查出来，内存排序
             // per_page 每页数量，根据需求配置
             console.log("request url:" + "https://api.github.com/repos/removeif/blog_comment/issues/comments?sort=created&direction=desc&per_page=10&page=1");
-            $.getJSON("https://api.github.com/repos/removeif/blog_comment/issues/comments?sort=created&direction=desc&per_page=10&page=1", function (result) {
+            $.getJSON("https://api.github.com/repos/removeif/blog_comment/issues/comments?sort=created&direction=desc&per_page=10&page=1&client_id=46a9f3481b46ea0129d8&client_secret=79c7c9cb847e141757d7864453bcbf89f0655b24", function (result) {
                 $.each(result, function (i, item) {
                     var contentStr = item.body.trim();
                     if (contentStr.lastIndexOf(">") != -1) {
@@ -74,7 +79,7 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
                     // 获取跳转url
                     var itemUrl = "";
                     $.ajaxSettings.async = false;
-                    $.getJSON(item.issue_url, function (result) {
+                    $.getJSON(item.issue_url+"?client_id=46a9f3481b46ea0129d8&client_secret=79c7c9cb847e141757d7864453bcbf89f0655b24", function (result) {
                         itemUrl = result.body.substr(0, result.body.indexOf("\n") - 1);
                     });
                     // 放入
@@ -119,7 +124,7 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
             var hotDiv = $("#index_hot_div");
             $.ajaxSettings.async = false;
             console.log("request url:" + "https://api.github.com/repos/removeif/blog_comment/issues?per_page=10&sort=comments");
-            $.getJSON("https://api.github.com/repos/removeif/blog_comment/issues?per_page=10&sort=comments", function (result) {
+            $.getJSON("https://api.github.com/repos/removeif/blog_comment/issues?per_page=10&sort=comments&client_id=46a9f3481b46ea0129d8&client_secret=79c7c9cb847e141757d7864453bcbf89f0655b24", function (result) {
                 $.each(result, function (i, item) {
                     // 标签配色
                     if (i >=0 & i<4) {

@@ -34,11 +34,30 @@ git clone https://github.com/removeif/hexo-theme-icarus-removeif.git
 #### 开始部分配置：
 **敲黑板！！！！首先全局以及主题中的`_config.yml`配置成自己的对应参数。**
 #### 1.热门推荐，最新评论：
-文件路径：themes/icarus/source/js/global-hot-data.js
-```xml
+文件路径：themes/icarus/source/js/global-hot-data.js  
+以下地址改成自己对于的博客评论的issues的仓库。
+```yaml
+// 评论
 https://api.github.com/repos/removeif/blog_comment/issues/comments?sort=created&direction=desc&per_page=10&page=1
- ```
-改成自己对于的博客评论的issues的仓库。
+// 热门推荐
+https://api.github.com/repos/removeif/blog_comment/issues?per_page=10&sort=comments
+```
+以上地址请求方式有接口限制，每小时只能请求60次，可以后面加上参数client_id和client_secret可以每小时请求5000次。即改为如下
+```yaml
+// 评论
+https://api.github.com/repos/removeif/blog_comment/issues/comments?sort=created&direction=desc&per_page=10&page=1&client_id=xxx&client_secret=xxx
+// 同时这一行$.getJSON(item.issue_url, function (result) {也要加上，如下
+$.getJSON(item.issue_url+"?client_id=xxx&client_secret=xxx", function (result) {
+// 热门推荐
+https://api.github.com/repos/removeif/blog_comment/issues?per_page=10&sort=comments&client_id=xxx&client_secret=xxx
+}
+```
+详情可以参照[官方api说明](https://developer.github.com/v3/#rate-limiting)  
+关于配置暴露client_id和client_secret安全性问题，gitalk作者有[解释](https://github.com/gitalk/gitalk/issues/150)  
++ 获取或修改 GitHub 用户数据，需要 token，为了拿到 token，除了需要 OAuth App 的 client_id 和 client_secret 外，还需要一个 Authorization Code。
++ 这个 code 是 GitHub 登录授权完成时，在跳转回 redirect_uri 的查询参数拿到的， redirect_uri 必须是在 OAuth App 配置的 callback URL 域名下。
++ 这样即使别人用了你的 client_id 和 client_secret ，跳转之后也拿不到 code，所以，有 client_id 和 client_secret 也做不了什么。
+
 对应主题中要开启gitalk评论，如下配置xxx换成自己的，否则无效。
 ```yaml
 comment:
@@ -52,6 +71,8 @@ comment:
 ```
 说明：热门推荐数据为评论数最多的文章，🔥后面的数字：根据文章的评论数*101 。  
 最新评论：为该仓库下，所有issue中的最新评论。  
+目前的最新评论有10分钟的cookie缓存，评论后可能10分钟后才能看见最新评论，出于性能优化，每次请求接口处理还是挺耗时，global-hot-data.js中可以自己去掉。  
+
 如果不使用热门推荐，删掉themes/icarus/layout/index.ejs中以下代码
 ```js
 <% if (page.path == 'index.html') { %>
@@ -154,7 +175,8 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 ### 博客快照：
 + 主页
-![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221347.png)
+![v1](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221347.png)
+![v2](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191014183620.png)
 + 置顶
 ![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190926210437.png)
 + 归档
