@@ -46,6 +46,7 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
                 COMMENT = JSON.parse(COMMENT_COOKIE.split("commentV=")[1]);
                 COMMENT_ARR = COMMENT["data"];
             }catch (e) {
+                COMMENT_COOKIE = '';
                 console.error(e);
             }
         }
