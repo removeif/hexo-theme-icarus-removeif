@@ -5,6 +5,7 @@ screen-tablet = 769px
 screen-desktop = 1088px
 screen-widescreen = 1280px
 screen-fullhd = 1472px
+extend-width = 70px // 向外拉伸
 
 /* ---------------------------------
  *       Override CSS Framework
@@ -21,8 +22,10 @@ body, button, input, select, textarea
 @media screen and (min-width: screen-widescreen)
     .is-1-column .container
     .is-2-column .container
-        max-width: screen-widescreen - 2 * gap
-        width: screen-widescreen - 2 * gap
+    .is-3-column .container
+        max-width: screen-widescreen + 2 * extend-width - 2 * gap
+        width: screen-widescreen + 2 * extend-width - 2 * gap
+
 @media screen and (min-width: screen-fullhd)
     .is-2-column .container
         max-width: screen-fullhd - 2 * gap
@@ -30,6 +33,9 @@ body, button, input, select, textarea
     .is-1-column .container
         max-width: screen-desktop - 2 * gap
         width: screen-desktop - 2 * gap
+    .is-3-column .container
+        max-width: screen-fullhd + 2 * extend-width - 2 * gap
+        width: screen-fullhd + 2 * extend-width - 2 * gap
 
 @media screen and (max-width: screen-tablet - 1)
     .section
@@ -48,54 +54,6 @@ body, button, input, select, textarea
     .column-right-shadow
         &.is-sticky
             top: 1.5rem
-
-/** 拉伸布局宽一些 start*/
-.columns {
-    margin-left: -8%;
-    margin-right: -8%;
-    margin-top: -1%;
-}
-
-.navbar .container {
-    margin-left: 4%;
-    margin-right: 3%;
-    .navbar-menu {
-        margin-right: -15%;
-    }
-}
-.footer .container {
-    margin-left: 4%;
-    margin-right: 3%;
-    .level-end{
-        margin-right: -15%;
-    }
-}
-
-
-@media screen and (max-width: screen-tablet - 1) {
-    .columns {
-        margin-left: -0.75rem;
-        margin-right: -0.75rem;
-        margin-top: -0.75rem;
-    }
-
-    .navbar .container {
-        margin: 0 auto;
-        position: relative;
-        .navbar-menu {
-            margin-right: -0rem;
-        }
-    }
-
-    .footer .container {
-        margin: 0 auto;
-        position: relative;
-        .level-end {
-            margin-right: -0rem;
-        }
-    }
-}
-/** 拉伸布局宽一些 end*/
 
 
 .tag
