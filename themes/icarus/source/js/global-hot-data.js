@@ -1,3 +1,9 @@
+// 评论issues仓库 by.removeif https://removeif.github.io/
+var repoIssuesUrl = "https://api.github.com/repos/removeif/blog_comment/issues";
+// 对应仓库 clientId、clientSecret 关于这两个参数的安全问题，查看 https://removeif.github.io/2019/09/19/博客源码分享.html#1-热门推荐，最新评论：
+var clientId = "46a9f3481b46ea0129d8";
+var clientSecret = "79c7c9cb847e141757d7864453bcbf89f0655b24";
+
 function getDateDiff(dateTimeStamp) {
     var minute = 1000 * 60;
     var hour = minute * 60;
@@ -60,7 +66,7 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
             // sort=comments可以按评论数排序，此处更适合按更新时间排序,可以根据updated排序，但是0条评论的也会出来，所以此处还是全部查出来，内存排序
             // per_page 每页数量，根据需求配置
             console.log("request url:" + "https://api.github.com/repos/removeif/blog_comment/issues/comments?sort=created&direction=desc&per_page=10&page=1");
-            $.getJSON("https://api.github.com/repos/removeif/blog_comment/issues/comments?sort=created&direction=desc&per_page=10&page=1&client_id=46a9f3481b46ea0129d8&client_secret=79c7c9cb847e141757d7864453bcbf89f0655b24", function (result) {
+            $.getJSON(repoIssuesUrl + "/comments?sort=created&direction=desc&per_page=10&page=1&client_id=" + clientId + "&client_secret=" + clientSecret, function (result) {
                 $.each(result, function (i, item) {
                     var contentStr = item.body.trim();
                     if (contentStr.lastIndexOf(">") != -1) {
@@ -80,7 +86,7 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
                     // 获取跳转url
                     var itemUrl = "";
                     $.ajaxSettings.async = false;
-                    $.getJSON(item.issue_url+"?client_id=46a9f3481b46ea0129d8&client_secret=79c7c9cb847e141757d7864453bcbf89f0655b24", function (result) {
+                    $.getJSON(item.issue_url + "?client_id=" + clientId + "&client_secret=" + clientSecret, function (result) {
                         itemUrl = result.body.substr(0, result.body.indexOf("\n") - 1);
                     });
                     // 放入
@@ -103,9 +109,8 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
             }
         }
 
-
+        // 加载最新评论内容
         if (COMMENT_ARR.length > 0) {
-            // 热门评论内容
             var htmlContentWidget = "<h3 class=\"menu-label\">" + "最新评论<br></h3>" + "<div class='comment-content'>";
             for (var i = 0; i < COMMENT_ARR.length; i++) {
                 var item = COMMENT_ARR[i];
@@ -118,14 +123,15 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
             htmlContentWidget += "</div>"
             $("#body_hot_comment").html(htmlContentWidget);
         }
-        // 加载热门推荐 最多每个小时请求60次
+
+        // 加载热门推荐
         var classDiv = "";
         var hotContent = "";
         if ($("#index_hot_div").length > 0) {
             var hotDiv = $("#index_hot_div");
             $.ajaxSettings.async = false;
             console.log("request url:" + "https://api.github.com/repos/removeif/blog_comment/issues?per_page=10&sort=comments");
-            $.getJSON("https://api.github.com/repos/removeif/blog_comment/issues?per_page=10&sort=comments&client_id=46a9f3481b46ea0129d8&client_secret=79c7c9cb847e141757d7864453bcbf89f0655b24", function (result) {
+            $.getJSON(repoIssuesUrl + "?per_page=10&sort=comments&client_id=" + clientId + "&client_secret=" + clientSecret, function (result) {
                 $.each(result, function (i, item) {
                     // 标签配色
                     if (i >=0 & i<4) {
@@ -142,6 +148,22 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
                 hotDiv.html("");
                 hotDiv.append(hotContent);
             });
+        }
+
+        // 装载评论数到文章对应位置
+        var gitalkIdsArr = document.getElementsByClassName('display-none-class');
+        if (gitalkIdsArr != undefined && gitalkIdsArr.length > 0) {
+            for (i = 0; i < gitalkIdsArr.length; i++) {
+                var id = gitalkIdsArr[i].innerText;
+                var reqUrl = repoIssuesUrl + "?client_id=" + clientId + "&client_secret=" + clientSecret + "&labels=Gitalk," + id + "&t=" + new Date().getTime();
+                $.getJSON(reqUrl, function (result) {
+                    try {
+                        $("#" + id).html(result[0].comments);
+                    } catch (e) {
+                        console.error(e);
+                    }
+                });
+            }
         }
 
         console.clear();
