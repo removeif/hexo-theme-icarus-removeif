@@ -14,8 +14,10 @@
                 <div class="level-item tag is-danger" style="background-color: #3273dc;">已置顶</div>
                 <%} %>
                 <time class="level-item has-text-grey" datetime="<%= date_xml(post.date) %>"><%= date(post.date) %></time>
-                <span class="display-none-class"><%- md5(post.path) %></span>
-                <img class="not-gallery-item" src="/images/chat.svg">&nbsp;<span class="level-item has-text-grey" id=<%- md5(post.path) %>>99+</span></img>
+                <% if (get_config('comment.type') == 'gitalk') { %>
+                    <span class="display-none-class"><%- md5(post.path) %></span>
+                    <img class="not-gallery-item" src="/images/chat.svg">&nbsp;<span class="level-item has-text-grey" id=<%- md5(post.path) %>>99+</span></img>
+                <% } %>
                 <% if (post.categories && post.categories.length) { %>
                 <div class="level-item">
                 <%- list_categories(post.categories, {
@@ -52,6 +54,17 @@
         <div class="content">
             <%- index && post.excerpt ? post.excerpt : post.content %>
         </div>
+        <!-- 部分参考自https://www.alphalxy.com/2019/03/customize-icarus/ -->
+        <% if (!index && post.layout === 'post' && post.copyright !== false) { %>
+            <ul class="post-copyright">
+            <li><strong>本文标题：</strong><a href="<%= post.permalink %>"><%= page.title %></a></li>
+            <li><strong>本文作者：</strong><a href="<%= theme.url %>"><%= theme.author %></a></li>
+            <li><strong>本文链接：</strong><a href="<%= post.permalink %>"><%= post.permalink %></a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+            </ul>
+            <br>
+        <% } %>
         <% if (!index && post.tags && post.tags.length) { %>
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
@@ -60,17 +73,38 @@
                     <%- list_tags(post.tags, {
                         class: 'has-link-grey ',
                         show_count: false,
-                        style: 'link'
+                        style: 'link',
+                        separator: ',&nbsp;'
                     }) %>
                 </div>
             </div>
         </div>
         <% } %>
         <% if (index && post.excerpt) { %>
-        <div class="level is-mobile">
+        <div class="level is-mobile is-flex">
+            <div class="level-start">
+                <% if (post.tags && post.tags.length) { %>
+                <div class="level-item is-size-7 is-uppercase">
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <%- list_tags(post.tags, {
+                        class: 'has-link-grey ',
+                        show_count: false,
+                        style: 'link',
+                        separator: ',&nbsp;'
+                    }) %>
+                </div>
+                <% } %>
+            </div>
+            <div class="level-start">
+                <div class="level-item has-text-grey is-size-7 is-hidden-mobile">
+                <% if (post.updated && post.updated > post.date) { %>
+                <time datetime="<%= date_xml(post.updated) %>"><i class="far fa-calendar-check">&nbsp;更新时间:&nbsp;</i><%= date(post.updated) %></time>
+                <% } %>
+                </div>
+            </div>
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="<%- url_for(post.path) %>#more"><%= __('article.more') %></a>
+                <a class="button is-size-7 is-light" href="<%- url_for(post.path) %>#more"><i class="fas fa-book-reader has-text-grey">&nbsp;</i><%= __('article.more') %></a>
                 </div>
             </div>
         </div>

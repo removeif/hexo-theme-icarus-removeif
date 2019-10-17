@@ -8,6 +8,7 @@ Date.prototype.Format = function (fmt) { //author: meizz
         "q+": Math.floor((this.getMonth() + 3) / 3), //季度
         "S": this.getMilliseconds()             //毫秒
     };
+
     if (/(y+)/.test(fmt))
         fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
     for (var k in o)
@@ -20,7 +21,7 @@ $(function () { //获取处理友链数据
     $.getJSON("../json_data/friend.json", function (data) {
 
         var data0 = data[0];
-
+        $('.links-content').html("");
         $('.links-content').append("<div class=\"link-navigation\"><div class='friend-title-item'>本站友链信息【欢迎添加到自己的网站，需要交换友链请留言哦】</div>");
         {
             var e = data0;

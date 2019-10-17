@@ -51,7 +51,7 @@ github api 详情可以参照[官方api说明](https://developer.github.com/v3/#
 + 这个 code 是 GitHub 登录授权完成时，在跳转回 redirect_uri 的查询参数拿到的， redirect_uri 必须是在 OAuth App 配置的 callback URL 域名下。
 + 这样即使别人用了你的 client_id 和 client_secret ，跳转之后也拿不到 code，所以，有 client_id 和 client_secret 也做不了什么。
 
-对应主题中要开启`gitalk评论，相应的最新评论、热门推荐、文章中评论数都需要依靠gitalk评论，如果使用主题中其他评论请删掉此三个模块，以免出错`，如下配置xxx换成自己的，否则无效。
+对应主题中要开启`gitalk评论，相应的最新评论、热门推荐、文章中评论数都需要依靠gitalk评论，如果使用主题中其他评论请删掉(2019.10.17已加上判断逻辑不用删掉了)此三个模块，以免出错`，如下配置xxx换成自己的，否则无效。
 ```yaml
 comment:
     type: gitalk
