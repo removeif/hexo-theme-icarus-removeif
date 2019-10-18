@@ -78,7 +78,7 @@ function loadCommentData(resultArr) {
                 }
             }
 
-            if (temp == undefined || temp == "") {
+            if (contentStr == undefined || contentStr == "") {
                 contentStr = "内容为空！";
             }
 

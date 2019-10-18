@@ -40,7 +40,7 @@ git clone https://github.com/removeif/hexo-theme-icarus-removeif.git
 以下引号里的地址改成自己对于的博客评论的issues的仓库相关的值。
 ```yaml
 // 评论issues仓库 by.removeif https://removeif.github.io/
-var repoIssuesUrl = "https://api.github.com/repos/removeif/blog_comment/issues";
+var repoIssuesUrl = "https://api.github.com/repos/removeif/blog_comment/issues"; // removeif：用户名，blog_comment：评论的issue仓库
 // 对应仓库 clientId、clientSecret 关于这两个参数的安全问题，查看 https://removeif.github.io/2019/09/19/博客源码分享.html#1-热门推荐，最新评论：
 var clientId = "46a9f3481b46ea0129d8";
 var clientSecret = "79c7c9cb847e141757d7864453bcbf89f0655b24";
@@ -59,7 +59,7 @@ comment:
     repo: blog_comment          # (required) GitHub repository name
     client_id: xxx     # (required) OAuth application client id
     client_secret: xxx # (required) OAuth application client secret
-    admin: xxx
+    admin: xxx  #此账户一般为用户名 GitHub user name 文章中能创建issue需要此用户登录才可以，点了创建issue后刷新一遍才能看到！！！！
     createIssueManually: true
 ```
 说明：
