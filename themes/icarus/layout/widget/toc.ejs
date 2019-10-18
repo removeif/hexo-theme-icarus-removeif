@@ -26,7 +26,7 @@ function buildToc(toc) {
     return result;
 }
 %>
-<% let tocContent = buildToc(_toc(post.content)); if (tocContent !== '' && tocContent !== undefined){ %>
+<% let tocContent = buildToc(_toc(post.content)); if (tocContent !== undefined && tocContent !== ''){ %>
 <div class="card widget" id="toc" style="max-height: 225px;overflow: auto;">
     <div class="card-content">
         <div class="menu">

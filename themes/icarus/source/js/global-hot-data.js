@@ -60,9 +60,28 @@ function loadCommentData(resultArr) {
     $.getJSON(repoIssuesUrl + "/comments?sort=created&direction=desc&per_page=10&page=1&client_id=" + clientId + "&client_secret=" + clientSecret, function (result) {
         $.each(result, function (i, item) {
             var contentStr = item.body.trim();
-            if (contentStr.lastIndexOf(">") != -1) {
-                contentStr = contentStr.substr(contentStr.lastIndexOf(">") + 1);
+            var isSubStr = true;
+            contentStr = contentStr.replace(" ", "");
+            contentStr = contentStr.replace("&nbsp;", "");
+            while (isSubStr) {
+                if (contentStr.lastIndexOf(">") != -1) {
+                    var temp = contentStr.substr(contentStr.lastIndexOf(">") + 1);
+                    if (temp == undefined || temp == "") {
+                        isSubStr = true;
+                        contentStr = contentStr.substr(0, contentStr.lastIndexOf(">") - 1);
+                    } else {
+                        isSubStr = false;
+                        contentStr = temp;
+                    }
+                } else {
+                    isSubStr = false;
+                }
             }
+
+            if (temp == undefined || temp == "") {
+                contentStr = "内容为空！";
+            }
+
             // 替换图片
             contentStr = contentStr.replace(/![\s\w\](?:http(s)?:\/\/)+[\w.-]+(?:\.[\w\.-]+)+[\w\-\._~:/?#[\]@!\$&'\*\+,;=.]+\)/g, "[图片]");
 

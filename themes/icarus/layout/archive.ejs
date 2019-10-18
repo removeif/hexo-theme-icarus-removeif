@@ -3,8 +3,8 @@
 <div class="card widget">
     <div class="card-content">
         <!-- 文章贡献参照主题归档元素 https://github.com/blinkfox/hexo-theme-matery -->
-        <div style="overflow-x: auto;justify-content:center;">
-             <div id="post-calendar" style="display:flex;justify-context:center;align-items:center;left: 0px;top: 0px;width: 112%;height: 200px;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
+        <div style="post-calendar-pre">
+             <div id="post-calendar"></div>
         </div>
         <h3 class="tag is-link">
         <%= month === null ? year : time.locale(get_config('language', 'en')).format('MMMM YYYY') %>
@@ -69,7 +69,7 @@ if (!page.year) {
         var titleText = (config.language && config.language.indexOf('zh') >= 0) ? '文章贡献' : 'Post Calendar';
 
         // calculate range.
-        var startDate = moment().subtract(1, 'years');
+        var startDate = moment().subtract(0.75, 'years');
         var endDate = moment();
         var rangeArr = '["' + startDate.format('YYYY-MM-DD') + '", "' + endDate.format('YYYY-MM-DD') + '"]';
 
@@ -98,7 +98,7 @@ if (!page.year) {
             title: {
                 top: 0,
                 text: '<%- titleText %>',
-                left: '35%',
+                left: '45%',
                 textStyle: {
                     color: '#3C4858'
                 }
@@ -125,7 +125,7 @@ if (!page.year) {
                 itemWidth: 12,
                 itemHeight: 12,
                 orient: 'horizontal',
-                left: '27%',
+                left: '38%',
                 bottom: 0
             },
             calendar: [{

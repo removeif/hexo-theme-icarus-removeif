@@ -35,7 +35,7 @@ git clone https://github.com/removeif/hexo-theme-icarus-removeif.git
 #### 开始部分配置：
 **敲黑板！！！！首先全局以及主题中的`_config.yml`配置成自己的对应参数。**
 #### 1.热门推荐，最新评论，文章评论数：
-**仅针对gitalk评论有效**
+**仅针对gitalk评论有效，如果配置完后显示[本博客](https://removeif.github.io/)相关评论、推荐，请详细阅读这一条**
 文件路径：themes/icarus/source/js/global-hot-data.js  
 以下引号里的地址改成自己对于的博客评论的issues的仓库相关的值。
 ```yaml
@@ -156,7 +156,7 @@ module.exports = function(locals){
 #### 7.以上配置好后
 ```yaml
 $ npm install hexo --save #安装依赖包（只需要执行一次）
-$ hexo clear #清除缓存
+$ hexo clean #清除缓存
 $ hexo g #编译 
 $ hexo s #启动服务 
 $ hexo d #推到远程 
@@ -177,6 +177,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 + 主页
 ![v1](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221347.png)
 ![v2](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191014183620.png)
+![v3](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191018114126.png)
 + 置顶
 ![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190926210437.png)
 + 文章评论数

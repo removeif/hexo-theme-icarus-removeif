@@ -35,7 +35,9 @@
     <%- partial('search/' + get_config('search.type')) %>
     <% } %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <% if (get_config('comment.type') !== undefined && get_config('comment.type') == 'gitalk'){ %>
     <script type="text/javascript" defer src="/js/global-hot-data.js"></script>
+    <% } %>
     <script type="text/javascript" async="" src="/live2d/autoload.js"></script>
 </body>
 </html>

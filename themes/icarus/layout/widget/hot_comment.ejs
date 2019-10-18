@@ -1,4 +1,4 @@
-<% if (get_config('comment.type') == 'gitalk') { %>
+<% if (get_config('comment.type') !== undefined && get_config('comment.type') == 'gitalk') { %>
     <div class="card widget">
         <div class="card-content" id="body_hot_comment">
         <h3 class="menu-label">最新评论<br>加载中，稍等几秒...</h3>
