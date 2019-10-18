@@ -10,6 +10,7 @@
 *     <%- duration() %>
 *     <%- word_count(content) %>
 *     <%- md5(data) %>
+*     <%- meta() %>
 *     <%- hexo_version() %>
  */
 const URL = require('url').URL;
@@ -69,7 +70,7 @@ module.exports = function (hexo) {
         function trim(str) {
             return str.trim().replace(/^"(.*)"$/, '$1').replace(/^'(.*)'$/, '$1');
         }
-
+    
         function split(str, sep) {
             const result = [];
             let matched = null;
@@ -78,6 +79,7 @@ module.exports = function (hexo) {
             }
             return result;
         }
+
         const getConfig = hexo.extend.helper.get('get_config').bind(this);
         const metas = getConfig('meta', []);
         const metaDOMArray = metas.map(function (meta) {

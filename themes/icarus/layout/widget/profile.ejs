@@ -12,15 +12,12 @@
 <div class="card widget">
     <div class="card-content">
         <nav class="level">
-            <div class="level-item has-text-centered">
+            <div class="level-item has-text-centered" style="flex-shrink: 1">
                 <div>
-                    <% if (get_config_from_obj(widget, 'avatar_rounded')) { %>
-                        <figure class="image container is-128x128 has-mb-6">
-                            <img class="is-rounded" src="<%= avatar() %>" alt="<%= get_config_from_obj(widget, 'author') %>">
-                        </figure>
-                    <% } else { %>
-                        <img class="image is-128x128 has-mb-6" src="<%= avatar() %>" alt="<%= get_config_from_obj(widget, 'author') %>">
-                    <% } %>
+                    <% const is_rounded = get_config_from_obj(widget, 'avatar_rounded', false); %>
+                    <figure class="image is-128x128 has-mb-6">
+                        <img class="<%= is_rounded ? 'is-rounded' : '' %>" src="<%= avatar() %>" alt="<%= get_config_from_obj(widget, 'author') %>">
+                    </figure>
                     <% if (get_config_from_obj(widget, 'author')) { %>
                     <p class="is-size-4 is-block">
                         <%= get_config_from_obj(widget, 'author') %>
@@ -72,10 +69,12 @@
                 </div>
             </div>
         </nav>
+        <% if (widget.follow_link) { %>
         <div class="level">
             <a class="level-item button is-link is-rounded" href="<%= url_for(widget.follow_link) %>" target="_blank">
                 <%= __('widget.follow') %></a>
         </div>
+        <% } %>
         <% const socialLinks = get_config_from_obj(widget, 'social_links'); %>
         <% if (socialLinks !== null) { %>
         <div class="level is-mobile">

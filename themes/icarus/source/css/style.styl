@@ -55,7 +55,6 @@ body, button, input, select, textarea
         &.is-sticky
             top: 1.5rem
 
-
 .tag
     &.is-grey
         background: #e7e7e7
@@ -134,6 +133,8 @@ img.thumbnail
         margin-right: 0
     .menu-list a.level
         display: flex
+    .has-text-centered figure.image
+        margin: auto
 
 .pagination
     .pagination-link:not(.is-current), .pagination-previous, .pagination-next
@@ -190,6 +191,7 @@ img.thumbnail
             img
                 margin: auto
                 display: block
+            word-wrap: break-word
 
 .rtl
      direction: rtl
@@ -212,7 +214,7 @@ img.thumbnail
         box-shadow: 0 4px 10px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.2)
         overflow: hidden
         img
-            max-width: 140px
+            max-width: 280px
     &:hover
         .qrcode
             display: block
@@ -365,6 +367,9 @@ figure.highlight
     width: 100%
     position: relative
     margin: 1em 0 1em !important
+    &.folded
+        .highlight-body
+            height: 0
 
     pre,
     table tr:hover
@@ -390,14 +395,29 @@ figure.highlight
         text-align: left
         font-style: normal
         font-size: .8em
+        &:after
+            clear: both
+            content: " "
+            display: table
 
         span
             font-weight: 500
             font-family: family-mono
 
+        .fold
+        a
+            color: #9a9a9a
+
         a
             float: right
-            color: #9a9a9a
+            margin-left: 0.5em
+
+        .fold
+            margin-right: 0.5em
+            cursor: pointer
+
+    .highlight-body
+        overflow: auto
 
     .gutter
         text-align: right
@@ -448,6 +468,7 @@ figure.highlight
         left: 0
         width: 100%
         height: 100%
+
 /* ---------------------------------
  *        Fix Gist Snippet
  * --------------------------------- */

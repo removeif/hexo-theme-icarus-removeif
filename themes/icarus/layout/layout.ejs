@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <html <%- has_config('language') ? ' lang="' + get_config('language').substring(0, 2) + '"' : '' %>>
 <head>
-    <%- partial('common/head') %>
+    <%- _partial('common/head') %>
     <!-- <meta name="referrer" content="no-referrer" /> 解决图片过期问题-->
 </head>
 <body class="is-<%= column_count() %>-column">
-    <%- partial('common/navbar', { page }) %>
+    <%- _partial('common/navbar') %>
     <% function main_column_class() {
         switch (column_count()) {
             case 1:
@@ -21,18 +21,18 @@
         <div class="container">
             <div class="columns">
                 <div class="column <%= main_column_class() %> has-order-2 column-main"><%- body %></div>
-                <%- partial('common/widget', { position: 'left' }) %>
+                <%- _partial('common/widget', { position: 'left' }) %>
                 <% if (page.__page !== true && page.__post !== true) { %>
-                <%- partial('common/widget', { position: 'right' }) %>
+                <%- _partial('common/widget', { position: 'right' }) %>
                 <% } %>
             </div>
         </div>
     </section>
-    <%- partial('common/footer') %>
-    <%- partial('common/scripts') %>
+    <%- _partial('common/footer') %>
+    <%- _partial('common/scripts') %>
 
     <% if (has_config('search.type')) { %>
-    <%- partial('search/' + get_config('search.type')) %>
+    <%- _partial('search/' + get_config('search.type')) %>
     <% } %>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <% if (get_config('comment.type') !== undefined && get_config('comment.type') == 'gitalk'){ %>

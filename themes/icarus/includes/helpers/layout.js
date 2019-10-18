@@ -1,10 +1,10 @@
 /**
  * Helper functions for controlling layout.
  *
- * @example
- *     <%- get_widgets(position) %>
- *     <%- has_column() %>
- *     <%- column_count() %>
+* @example
+*     <%- get_widgets(position) %>
+*     <%- has_column() %>
+*     <%- column_count() %>
  */
 module.exports = function (hexo) {
     hexo.extend.helper.register('has_widget', function (type) {
