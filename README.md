@@ -37,11 +37,11 @@ git clone https://github.com/removeif/hexo-theme-icarus-removeif.git
 #### 1.热门推荐，最新评论，文章评论数：
 **仅针对gitalk评论有效，如果配置完后显示[本博客](https://removeif.github.io/)相关评论、推荐，请详细阅读这一条**
 文件路径：themes/icarus/source/js/global-hot-data.js  
-以下引号里的地址改成自己对于的博客评论的issues的仓库相关的值。
+以下引号里的地址改成自己对应的博客评论的issues的仓库相关的值。
 ```yaml
 // 评论issues仓库 by.removeif https://removeif.github.io/
 var repoIssuesUrl = "https://api.github.com/repos/removeif/blog_comment/issues"; // removeif：用户名，blog_comment：评论的issue仓库
-// 对应仓库 clientId、clientSecret 关于这两个参数的安全问题，查看 https://removeif.github.io/2019/09/19/博客源码分享.html#1-热门推荐，最新评论：
+// 评论issues仓库 clientId、clientSecret怎么申请自行搜索，关于这暴露两个参数的安全问题，查看 https://removeif.github.io/2019/09/19/博客源码分享.html#1-热门推荐，最新评论：
 var clientId = "46a9f3481b46ea0129d8";
 var clientSecret = "79c7c9cb847e141757d7864453bcbf89f0655b24";
 ```
