@@ -35,7 +35,7 @@ git clone https://github.com/removeif/hexo-theme-icarus-removeif.git
 #### 开始部分配置：
 **敲黑板！！！！首先全局以及主题中的`_config.yml`配置成自己的对应参数。**
 #### 1.热门推荐，最新评论，文章评论数：
-**仅针对gitalk评论有效，如果配置完后显示[本博客](https://removeif.github.io/)相关评论、推荐，请详细阅读这一条**
+**仅针对gitalk评论有效，如果配置完后显示[本博客](https://removeif.github.io/)相关评论、推荐，请详细阅读这一条**  
 文件路径：themes/icarus/source/js/global-hot-data.js  
 以下引号里的地址改成自己对应的博客评论的issues的仓库相关的值。
 ```yaml
@@ -75,7 +75,7 @@ comment:
 
 如果不使用热门推荐，删掉themes/icarus/layout/index.ejs中以下代码
 ```js
-<% if (page.path == 'index.html') { %>
+<% if (page.path == 'index.html' && get_config('comment.type') !== undefined && get_config('comment.type') == 'gitalk'){ %>
 <div class="tag is-white" style="font-size:15px;">热门推荐：</div>
 <br>
 <br>
@@ -84,12 +84,11 @@ comment:
 </div>
 <% } %>
 ```
-如果不使用最新评论，删掉themes/icarus/_config.yml中中以下代码
+如果不使用最新评论，删掉themes/icarus/_config.yml中widgets:节点下代码
 ```yaml
-widgets:
     -
         # Widget name
-        type: hot_comment
+        type: latest_comment
         # Where should the widget be placed, left or right
         position: right
 ```
@@ -161,7 +160,8 @@ $ hexo g #编译
 $ hexo s #启动服务 
 $ hexo d #推到远程 
 ```
-安装依赖包（只需要执行一次），以后修改了代码 只需要执行后面几条就好。
+安装依赖包（只需要执行一次），以后修改了代码 只需要执行后面几条就好。  
+原来已有博客文章的迁移，只需要把原来对应的文章放到source/_posts里即可。然后去对应文章下面创建评论issue。
 
 enjoy！！！！👏👏👏👏👏👏👏
 
