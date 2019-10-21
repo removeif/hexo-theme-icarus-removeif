@@ -60,7 +60,8 @@ comment:
     client_id: xxx     # (required) OAuth application client id
     client_secret: xxx # (required) OAuth application client secret
     admin: xxx  #此账户一般为用户名 GitHub user name 文章中能创建issue需要此用户登录才可以，点了创建issue后刷新一遍才能看到！！！！
-    createIssueManually: true
+    create_issue_manually: true
+    distraction_free_mode: true
 ```
 说明：
 + 热门推荐数据为评论数最多的文章，🔥后面的数字：根据文章的评论数*101 。  

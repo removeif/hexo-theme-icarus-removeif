@@ -214,7 +214,7 @@ img.thumbnail
         box-shadow: 0 4px 10px rgba(0,0,0,.1), 0 0 1px rgba(0,0,0,.2)
         overflow: hidden
         img
-            max-width: 280px
+            max-width: 140px
     &:hover
         .qrcode
             display: block
@@ -437,15 +437,16 @@ figure.highlight
         min-width: inherit
         border-radius: inherit
 
-    .copy
-        display: none
-        position: absolute
-        bottom: 0
-        right: 0
-        color: white
-        background: rgba(0, 0, 0, 0.5)
-    &:hover .copy
-        display: block
+    // 此处放开后只有焦点放到代码块上才显示复制图标
+    //.copy
+    //    display: none
+    //    position: absolute
+    //    bottom: 0
+    //    right: 0
+    //    color: white
+    //    background: rgba(0, 0, 0, 0.5)
+    //&:hover .copy
+    //    display: block
 
 .table-overflow
     overflow-x: auto

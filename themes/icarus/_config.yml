@@ -57,9 +57,9 @@ article:
     # Code highlight theme
     # https://github.com/highlightjs/highlight.js/tree/master/src/styles sunburst xt-256
     highlight:
-        theme: atom-one-dark
-        fold: unfolded
-        clipboard: true
+        theme: atom-one-dark #代码风格配置类型
+        fold: unfolded  # 是否折叠代码 folded-折叠
+        clipboard: true # 是否显示复制图标
     # Whether to show article thumbnail images
     thumbnail: true
     # Whether to show estimate article reading time
