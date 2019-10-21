@@ -158,7 +158,7 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
         }
 
 
-        if (COMMENT_CACHE == '' || new Date().getTime() - COMMENT["date"] > 60 * 1000 * 0.5) { // request per 10 minutes
+        if (COMMENT_CACHE == '' || new Date().getTime() - COMMENT["date"] > 60 * 1000 * 10) { // request per 10 minutes
             console.log("req data...");
             var resultMap = {};
             var resultArr = [];
