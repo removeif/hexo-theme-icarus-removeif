@@ -36,7 +36,7 @@ git clone https://github.com/removeif/hexo-theme-icarus-removeif.git
 **敲黑板！！！！首先全局以及主题中的`_config.yml`配置成自己的对应参数。**
 #### 1.热门推荐，最新评论，文章评论数：
 **仅针对gitalk评论有效，如果配置完后显示[本博客](https://removeif.github.io/)相关评论、推荐，请详细阅读这一条**  
-文件路径：themes/icarus/source/js/global-hot-data.js  
+文件路径：themes/icarus/source/js/comment-issue-data.js  
 以下引号里的地址改成自己对应的博客评论的issues的仓库相关的值。
 ```yaml
 // 评论issues仓库 by.removeif https://removeif.github.io/
