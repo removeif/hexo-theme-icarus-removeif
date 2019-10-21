@@ -141,25 +141,25 @@ function loadIndexHotData() {
 
 $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的先加载
 
+        var COMMENT_CACHE_KEY = "commentKey";
         var COMMENT_ARR = {};
-        var COMMENT_COOKIE = document.cookie;
+        var COMMENT_CACHE = localStorage.getItem(COMMENT_CACHE_KEY);
         var COMMENT = {};
 
-        if (COMMENT_COOKIE != '') {
-            console.log("load cache data...");
+        if (COMMENT_CACHE != '') {
             // 异常不影响结果，继续往下执行
             try {
-                COMMENT = JSON.parse(COMMENT_COOKIE.split("commentV=")[1]);
+                COMMENT = JSON.parse(COMMENT_CACHE);
                 COMMENT_ARR = COMMENT["data"];
             } catch (e) {
-                COMMENT_COOKIE = '';
+                COMMENT_CACHE = '';
                 console.error(e);
             }
         }
 
 
-        if (COMMENT_COOKIE == '' || new Date().getTime() - COMMENT["date"] > 60 * 1000 * 10) { // request per 10 minutes
-            console.log("load data...");
+        if (COMMENT_CACHE == '' || new Date().getTime() - COMMENT["date"] > 60 * 1000 * 0.5) { // request per 10 minutes
+            console.log("req data...");
             var resultMap = {};
             var resultArr = [];
             loadCommentData(resultArr);
@@ -167,8 +167,10 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
             resultMap["data"] = resultArr;
             COMMENT_ARR = resultArr;
             if (COMMENT_ARR.length > 0) {
-                document.cookie = "commentV=" + JSON.stringify(resultMap) + ";path=/";
+                localStorage.setItem(COMMENT_CACHE_KEY, JSON.stringify(resultMap));
             }
+        } else {
+            console.log("load cache data...");
         }
 
 
