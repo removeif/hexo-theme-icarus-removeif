@@ -77,12 +77,11 @@ comment:
 如果不使用热门推荐，删掉themes/icarus/layout/index.ejs中以下代码
 ```js
 <% if (page.path == 'index.html' && get_config('comment.type') !== undefined && get_config('comment.type') == 'gitalk'){ %>
-<div class="tag is-white" style="font-size:15px;">热门推荐：</div>
-<br>
-<br>
-<div class="tags hot-tags" id = "index_hot_div">
-加载中，稍等几秒...
-</div>
+    <div class="card widget">
+        <div class="card-content">
+        <h3 class="menu-label">热门推荐</h3><span class="menu-label1" id="index_hot_div">加载中，稍等几秒...</span>
+        </div>
+    </div>
 <% } %>
 ```
 如果不使用最新评论，删掉themes/icarus/_config.yml中widgets:节点下代码
@@ -176,9 +175,10 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 ### 博客快照：
 + 主页
-![v1](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221347.png)
-![v2](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191014183620.png)
+![v4](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191022182226.png)
 ![v3](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191018114126.png)
+![v2](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191014183620.png)
+![v1](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221347.png)
 + 置顶
 ![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190926210437.png)
 + 文章评论数

@@ -1,10 +1,8 @@
 <% if (page.path == 'index.html' && get_config('comment.type') !== undefined && get_config('comment.type') == 'gitalk'){ %>
-    <!-- 参考自https://dp2px.com/网站 -->
-    <div class="tag is-white" style="font-size:15px;">热门推荐：</div>
-    <br>
-    <br>
-    <div class="tags hot-tags" id = "index_hot_div">
-    加载中，稍等几秒...
+    <div class="card widget">
+        <div class="card-content">
+        <h3 class="menu-label">热门推荐</h3><span class="menu-label1" id="index_hot_div">加载中，稍等几秒...</span>
+        </div>
     </div>
 <% } %>
 <% page.posts.each(function(post){ %>

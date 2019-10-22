@@ -205,10 +205,15 @@ widgets:
         position: left
         # Links to be shown in the links widget
         item:
+            2019.10.22：改版文章样式、优化速度:
+            2019.10.13：改版评论:
+            2019.09.25：接入免费cdn:
+            2019.09.19：开源博客代码:
+            2019.09.14：增加评论、推荐:
             2019.09.01：加入伪娘看板:
-            2019.08.11：网站升级: 'https://weibo.com/u/3050419984'
+            2019.08.11：网站升级:
             2019.02.01：采用Icarus主题:
-            2018.11.11：建站: 'https://www.cnblogs.com/KongkOngL/'
+            2018.11.11：建站:
 
 # Other plugin settings
 plugins:
