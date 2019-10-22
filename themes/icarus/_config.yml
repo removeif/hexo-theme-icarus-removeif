@@ -162,7 +162,7 @@ widgets:
         # Where should the widget be placed, left or right
         position: left
     -
-        # Widget name
+        # Widget name latest_comment 最新评论
         type: latest_comment
         # Where should the widget be placed, left or right
         position: right
@@ -203,7 +203,7 @@ widgets:
         type: notice
         # Where should the widget be placed, left or right
         position: left
-        # Links to be shown in the links widget
+        # Links to be shown in the notice widget 公告内容
         item:
             2019.10.22：改版文章样式、优化速度:
             2019.10.13：改版评论:
