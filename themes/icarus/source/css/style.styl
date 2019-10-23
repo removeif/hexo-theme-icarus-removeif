@@ -5,6 +5,7 @@ screen-tablet = 769px
 screen-desktop = 1088px
 screen-widescreen = 1280px
 screen-fullhd = 1472px
+screen-fullhd-exp = 1920px
 extend-width = 70px // 向外拉伸
 
 /* ---------------------------------
@@ -23,19 +24,24 @@ body, button, input, select, textarea
     .is-1-column .container
     .is-2-column .container
     .is-3-column .container
-        max-width: screen-widescreen + 2 * extend-width - 2 * gap
-        width: screen-widescreen + 2 * extend-width - 2 * gap
+        max-width: 94% //screen-widescreen + 2 * extend-width - 2 * gap
+        width: 94% //screen-widescreen + 2 * extend-width - 2 * gap
+    .navbar > .container .navbar-brand, .container > .navbar .navbar-brand {
+        margin-left: 0%;
+    }
+    .navbar > .container .navbar-menu, .container > .navbar .navbar-menu {
+        margin-right: 0.5%;
+    }
+    .level-end {
+        margin-right: -1.5%;
+    }
 
-@media screen and (min-width: screen-fullhd)
-    .is-2-column .container
-        max-width: screen-fullhd - 2 * gap
-        width: screen-fullhd - 2 * gap
+@media screen and (min-width: screen-fullhd-exp)
     .is-1-column .container
-        max-width: screen-desktop - 2 * gap
-        width: screen-desktop - 2 * gap
+    .is-2-column .container
     .is-3-column .container
-        max-width: screen-fullhd + 2 * extend-width - 2 * gap
-        width: screen-fullhd + 2 * extend-width - 2 * gap
+        max-width: 80% //screen-widescreen + 2 * extend-width - 2 * gap
+        width: 80% //screen-widescreen + 2 * extend-width - 2 * gap
 
 @media screen and (max-width: screen-tablet - 1)
     .section
