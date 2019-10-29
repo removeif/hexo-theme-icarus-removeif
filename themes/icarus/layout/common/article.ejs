@@ -17,7 +17,7 @@
                 <time class="level-item has-text-grey" datetime="<%= date_xml(post.date) %>"><%= date(post.date) %></time>
                 <% if (get_config('comment.type') !== undefined && get_config('comment.type') == 'gitalk') { %>
                     <span class="display-none-class"><%- md5(post.path) %></span>
-                    <img class="not-gallery-item" src="/images/chat.svg">&nbsp;<span class="level-item has-text-grey" id=<%- md5(post.path) %>>99+</span></img>
+                    <img class="not-gallery-item" src="/images/chat.svg">&nbsp;<a href="<%- url_for(post.path) %>#comment-container"><span id=<%- md5(post.path) %>>99+</span></a>&nbsp;&nbsp;&nbsp;&nbsp;</img>
                 <% } %>
                 <% if (post.categories && post.categories.length) { %>
                 <div class="level-item">
@@ -157,10 +157,14 @@
 <% } %>
 
 <% if (!index && has_config('comment.type')) { %>
-<div class="card">
-    <div class="card-content">
-        <h3 class="title is-5 has-text-weight-normal"><%= __('article.comments') %></h3>
-        <%- _partial('comment/' + get_config('comment.type')) %>
+    <div class="card">
+        <div class="card-content">
+            <% if (post.comments != false){ %>
+                <h3 class="title is-5 has-text-weight-normal"><%= __('article.comments') %></h3>
+                <%- _partial('comment/' + get_config('comment.type')) %>
+            <% } else { %>
+                <h3 class="title is-5 has-text-weight-normal">该页面评论已关闭！</h3>
+            <% } %>
+        </div>
     </div>
-</div>
 <% } %>

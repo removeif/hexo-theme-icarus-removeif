@@ -23,7 +23,6 @@ comments: false
 ---
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script type="text/javascript" src="/js/about-me.js"></script>
-+ <span id="timeDate"></span><span id="times"></span>
 + 网站采用的[Icarus主题](http://github.com/ppoffice/hexo-theme-icarus) 
 + 追求尽可能的简洁，清晰，易用。
 
