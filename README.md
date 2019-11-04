@@ -1,6 +1,7 @@
->话不多说，先看东西
-
+# 话不多说，先看两张图
+## 首页
 ![首页](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191104185039.png)
+## 文章
 ![文章](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191104185116.png)
 
 ### 写在前面
