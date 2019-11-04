@@ -123,13 +123,13 @@ function loadIndexHotData() {
             $.each(result, function (i, item) {
                 // 标签配色
                 if (i >= 0 & i < 4) {
-                    classDiv = "class=\"tag is-danger\"";
+                    classDiv = "class=\"item level3\"";
                 } else if (i >= 4 & i < 7) {
-                    classDiv = "class=\"tag is-success\"";
+                    classDiv = "class=\"item level2\"";
                 } else if (i >= 7 & i < 9) {
-                    classDiv = "class=\"tag is-warning\"";
+                    classDiv = "class=\"item level1\"";
                 } else {
-                    classDiv = "class=\"tag is-white is-white1\"";
+                    classDiv = "class=\"item level0\"";
                 }
                 hotContent += "<a href =\"" + item.body.substr(0, item.body.indexOf("\n") - 1) + "\"target=\"_blank\"" + classDiv + ">" + item.title.substr(0, item.title.indexOf("-") - 1) + "&nbsp;🔥" + (item.comments * 101) + "</a>&nbsp;&nbsp;"
             })

@@ -99,7 +99,7 @@
             <div class="level-start">
                 <div class="level-item has-text-grey is-size-7 is-hidden-mobile">
                 <% if (post.updated && post.updated > post.date) { %>
-                <time datetime="<%= date_xml(post.updated) %>"><i class="far fa-calendar-check">&nbsp;更新时间:&nbsp;</i><%= date(post.updated) %></time>
+                <time datetime="<%= date_xml(post.updated) %>"><i class="far fa-calendar-check">&nbsp;最后修改:&nbsp;</i><%= date(post.updated) %></time>
                 <% } %>
                 </div>
             </div>

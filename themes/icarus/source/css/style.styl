@@ -36,24 +36,34 @@ body, button, input, select, textarea
         margin-right: -1.5%;
     }
     .img-x
-        overflow auto
-        height: 190px;
+        position: relative;
+        overflow-y: hidden;
+        height: 100%;
         white-space: nowrap;
         a {
-            width: 30%;
-            height: 90%;
-            float left
-            margin 1%
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            padding: 10px 10px;
+            vertical-align: top;
+            height: 100%;
+            width: 40%;
         }
     .img-y
-        overflow auto
-        height: 530px;
+        position: relative;
+        overflow-y: hidden;
+        height: 100%;
         white-space: nowrap;
         a {
+            box-sizing: border-box;
+            text-align: center;
+            position: relative;
+            display: inline-block;
+            padding: 10px 10px;
+            vertical-align: top;
+            height: 100%;
             width: 30%;
-            height: 92%;
-            float left
-            margin 1.6%
         }
 
 @media screen and (min-width: screen-fullhd-exp)
@@ -879,11 +889,35 @@ figure.highlight
     margin-top 10px
     display: flex;
     flex-wrap: wrap;
-    .tag:not(:last-child) {
-        margin-right: 0.5rem;
+    .item {
+        align-items: center;
+        background-color: whitesmoke;
+        border-radius: 4px;
+        color: #4a4a4a;
+        display: inline-flex;
+        font-size: 0.75rem;
+        height: 2.1rem;
+        justify-content: center;
+        line-height: 1.5;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        white-space: nowrap;
+        margin-bottom: 0.75rem;
+        box-shadow: 0px 0px 2px 1px #b5b5b5;
     }
-    .tag {
-        margin-bottom: 0.5rem;
+    .level0 {
+        background-color: #d9e6fd;
+    }
+    .level1 {
+        background-color: #8fb8fb;
+    }
+    .level2 {
+        background-color: #5593f7;
+        color white
+    }
+    .level3 {
+        background-color: #3273dc;
+        color white
     }
 
 #body_hot_comment

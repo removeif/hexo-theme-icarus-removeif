@@ -170,6 +170,25 @@ enjoy！！！！👏👏👏👏👏👏👏
 如果你喜欢该主题: [star](https://github.com/removeif/hexo-theme-icarus-removeif)  
 如果你想定制主题: [fork](https://github.com/removeif/hexo-theme-icarus-removeif) 
 
+### 文章中横竖图demo；对于横竖图推荐分开使用，且长宽一致的，如统一手机拍照、电脑截图
+使用方法：md文章中放入以下代码
+```html
+// 横图
+<div class="img-x">![v4](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191022182226.png)![v3](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191018114126.png)</div>
+// 竖图
+<div class="img-y">![打王者荣耀](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191024141906.jpg)![支付宝付款](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191024141926.jpg)![锤子便签](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191024145956.jpg)</div>
+// 横竖图justified-gallery
+<div class="justified-gallery">
+![张芷溪](http://wx1.sinaimg.cn/large/b5d1b710ly1g6bz7n92s7j212w0nr1kx.jpg)
+![李一桐](http://wx2.sinaimg.cn/mw1024/005RAHfgly1fvfc4f19qfj33402c0qv9.jpg)
+![李一桐](http://wx1.sinaimg.cn/mw1024/005RAHfgly1fuzz17s2q3j32e43cku0x.jpg)
+![gakki](http://wx1.sinaimg.cn/mw1024/70396e5agy1g5qe44xrp9j214u0x6grm.jpg)
+![gakki](http://wx1.sinaimg.cn/mw1024/70396e5agy1g5qe457i6yj21660ogtap.jpg)
+</div>
+```
+#### 效果如下（多图左右拉查看）
+[查看效果](https://removeif.github.io/2019/09/19/%E5%8D%9A%E5%AE%A2%E6%BA%90%E7%A0%81%E5%88%86%E4%BA%AB.html#效果如下（多图左右拉查看）)
+
 ### License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/removeif/hexo-theme-icarus-removeif/blob/master/LICENSE) file for details.
 
