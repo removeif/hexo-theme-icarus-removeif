@@ -1,3 +1,8 @@
+>话不多说，先看东西
+
+![首页](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191104185039.png)
+![文章](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191104185116.png)
+
 ### 写在前面
 
 博客源码包括两个主题[icarus](http://github.com/ppoffice/hexo-theme-icarus)和[next](https://github.com/iissnan/hexo-theme-next)，在主题基础之上参照各网友博客，以及自己的一些想法做出的一些修改以及增加部分新元素。  
