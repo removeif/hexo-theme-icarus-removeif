@@ -4,7 +4,7 @@ title: {{ title }}
 date: {{ date }}
 top: 100
 toc: true
-recommend: 0
+recommend: 1
 keywords: categories-java
 tags:
 categories: 
