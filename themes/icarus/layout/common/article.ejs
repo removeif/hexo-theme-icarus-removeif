@@ -55,22 +55,11 @@
         <div class="content">
             <%- index && post.excerpt ? post.excerpt : post.content %>
         </div>
-        <!-- 部分参考自https://www.alphalxy.com/2019/03/customize-icarus/ -->
-        <% if (!index && post.layout === 'post' && post.copyright !== false) { %>
-            <ul class="post-copyright">
-            <li><strong>本文标题：</strong><a href="<%= post.permalink %>"><%= page.title %></a></li>
-            <li><strong>本文作者：</strong><a href="<%= theme.url %>"><%= theme.author %></a></li>
-            <li><strong>本文链接：</strong><a href="<%= post.permalink %>"><%= post.permalink %></a></li>
-            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
-            </li>
-            </ul>
-            <br>
-        <% } %>
         <% if (!index && post.tags && post.tags.length) { %>
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
                     <%- list_tags(post.tags, {
                         class: 'has-link-grey ',
                         show_count: false,
@@ -109,6 +98,19 @@
                 </div>
             </div>
         </div>
+        <% } %>
+        <!-- 部分参考自https://www.alphalxy.com/2019/03/customize-icarus/ -->
+        <% if (!index && post.layout === 'post' && post.copyright !== false) { %>
+            <ul class="post-copyright">
+            <li><strong>本文标题：</strong><a href="<%= post.permalink %>"><%= page.title %></a></li>
+            <li><strong>本文作者：</strong><a href="<%= theme.url %>"><%= theme.author %></a></li>
+            <li><strong>本文链接：</strong><a href="<%= post.permalink %>"><%= post.permalink %></a></li>
+            <li><strong>版权声明：</strong>本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" rel="external nofollow" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明出处！
+            </li>
+            </ul>
+            <br>
+            <%- _partial('widget/recommend_posts') %>
+            <br>
         <% } %>
         <% if (!index && has_config('share.type')) { %>
         <%- _partial('share/' + get_config('share.type')) %>

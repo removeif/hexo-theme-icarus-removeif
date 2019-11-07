@@ -16,6 +16,7 @@ common:
 widget:
     follow: '关注我'
     recents: '最新文章'
+    recommend_posts: '本站推荐文章'
     links: '链接'
     tag_cloud: '标签云'
     catalogue: '目录'

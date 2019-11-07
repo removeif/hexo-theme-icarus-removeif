@@ -3,6 +3,7 @@ title: 安装、部分配置icarus主题中文版
 categories: [工具教程,主题工具]
 top: 100
 toc: true
+recommend: 1
 keywords: java
 date: 2019-02-28 10:36:56
 thumbnail: https://blog.zhangruipeng.me/hexo-theme-icarus/gallery/preview.png

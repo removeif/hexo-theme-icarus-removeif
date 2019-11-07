@@ -24,6 +24,7 @@
 + 归档页加入了一个文章贡献概览
 + 置顶文章的设置
 + 文章列表评论数显示
++ 文章中推荐文章模块配置 
 
 ### 二、部分配置说明：
 
@@ -158,7 +159,21 @@ module.exports = function(locals){
     });
 };
 ```
-#### 7.以上配置好后
+#### 7.配置文章中推荐文章模块  
+根据配置的recommend值（必须大于0），越大越靠前，相等取最新的，最多取5条。recommend配置在.md文章头中，如下  
+```yaml
+title: 博客源码分享
+top: 102
+toc: true
+recommend: 1 
+keywords: categories-github
+date: 2019-09-19 22:10:43
+thumbnail: https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221611.png
+tags: 工具教程
+categories: [工具教程,主题工具]
+```
+
+#### 以上配置好后
 ```yaml
 $ npm install hexo --save #安装依赖包（只需要执行一次）
 $ hexo clean #清除缓存
@@ -208,6 +223,8 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 ![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190926210437.png)
 + 文章评论数
 ![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191016133335.png)
++ 推荐文章模块
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191107131513.png)
 + 归档
 ![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221733.png)
 + 留言

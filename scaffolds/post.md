@@ -2,11 +2,12 @@
 thumbnail:
 title: {{ title }}
 date: {{ date }}
-tags:
-categories: 
 top: 100
 toc: true
+recommend: 0
 keywords: categories-java
+tags:
+categories: 
 ---
 > 摘要
 <!-- more -->

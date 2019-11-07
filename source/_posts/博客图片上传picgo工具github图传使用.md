@@ -2,6 +2,7 @@
 title: 博客图片上传picgo工具github图传使用
 top: 100
 toc: true
+recommend: 1
 keywords: java
 date: 2019-06-20 17:31:57
 thumbnail: https://raw.githubusercontent.com/removeif/blog_image/master/20190620173650.png

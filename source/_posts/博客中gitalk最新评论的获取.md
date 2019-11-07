@@ -2,6 +2,7 @@
 title: 博客中gitalk最新评论的获取
 top: 102
 toc: true
+recommend: 1
 keywords: categories-comment
 date: 2019-09-13 01:03:06
 thumbnail: https://raw.githubusercontent.com/removeif/blog_image/master/img/2019/20190913010935.png
