@@ -2,7 +2,7 @@
 thumbnail: http://wx2.sinaimg.cn/large/b5d1b710ly1g6tkoq1a10j212w0k17wh.jpg
 date: 2019-09-09 18:52:09
 ---
-<div class="friend-title-item">申请友链须知</div>
+<div class="friend-title-item">申请友链须知<hr></div>
 
 - 原则上只和技术类博客交换，但不包括含有和色情、暴力、政治敏感的网站。
 - 不和剽窃、侵权、无诚信的网站交换，优先和具有原创作品的网站交换。
@@ -16,6 +16,6 @@ date: 2019-09-09 18:52:09
     网站地址：https://removeif.github.io
     网站简介：后端开发，技术分享
 
----
+
 <script type="text/javascript" defer src="/js/friend.js"></script>
 <div class="links-content">加载中，稍等几秒...</div>
