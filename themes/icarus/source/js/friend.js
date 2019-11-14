@@ -20,7 +20,7 @@ $(function () { //获取处理友链数据
     $.getJSON("../json_data/friend.json", function (data) {
 
         // var data0 = data[0];
-        // $('.links-content').html("");
+        $('.links-content').html("");
         // $('.links-content').append("<div class=\"link-navigation\"><div class='friend-title-item'>本站博客</div>");
         // {
         //     var e = data0;
