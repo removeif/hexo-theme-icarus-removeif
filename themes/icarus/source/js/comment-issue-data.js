@@ -63,6 +63,7 @@ function loadCommentData(resultArr) {
             var isSubStr = true;
             contentStr = contentStr.replace(" ", "");
             contentStr = contentStr.replace("&nbsp;", "");
+            contentStr = contentStr.replace(/(-)+>/g," to ");
             while (isSubStr) {
                 if (contentStr.lastIndexOf(">") != -1) {
                     var temp = contentStr.substr(contentStr.lastIndexOf(">") + 1);

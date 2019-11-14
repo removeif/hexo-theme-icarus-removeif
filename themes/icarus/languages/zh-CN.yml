@@ -20,6 +20,9 @@ widget:
     links: '链接'
     tag_cloud: '标签云'
     catalogue: '目录'
+    email:
+        title: '订阅邮件'
+        button: '立即订阅'
 article:
     more: '阅读更多'
     comments: '评论'

@@ -17,6 +17,7 @@
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="<%= date_xml(post.date) %>"><%= date(post.date) %></time></div>
                     <a href="<%- url_for((post.link?post.link:post.path)) %>" class="title has-link-black-ter is-size-6 has-text-weight-normal"><%= post.title %></a>
                     <p class="is-size-7 is-uppercase">
+                        <i class="fas fa-folder-open has-text-grey"></i>&nbsp;
                         <%- list_categories(post.categories(), {
                             show_count: false,
                             class: 'has-link-grey ',

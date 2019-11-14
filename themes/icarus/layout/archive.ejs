@@ -35,12 +35,13 @@
                                 <div class="level-left">
                                     <% if (post.categories && post.categories.length) { %>
                                     <div class="level-item is-size-7 is-uppercase">
-                                    <%- list_categories(post.categories, {
-                                        class: 'has-link-grey ',
-                                        show_count: false,
-                                        style: 'none',
-                                        separator: ' / '
-                                    }) %>
+                                        <i class="fas fa-folder-open has-text-grey"></i>&nbsp;
+                                        <%- list_categories(post.categories, {
+                                            class: 'has-link-grey ',
+                                            show_count: false,
+                                            style: 'link',
+                                            separator: '&nbsp;/&nbsp;'
+                                        }) %>
                                     </div>
                                     <% } %>
                                 </div>

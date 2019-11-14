@@ -3,7 +3,6 @@
 ![首页](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191104185039.png)
 ## 文章
 ![文章](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191104185116.png)
-
 ### 写在前面
 
 博客源码包括两个主题[icarus](http://github.com/ppoffice/hexo-theme-icarus)和[next](https://github.com/iissnan/hexo-theme-next)，在主题基础之上参照各网友博客，以及自己的一些想法做出的一些修改以及增加部分新元素。  
@@ -11,7 +10,7 @@
 膜拜和感谢所有模块的原作者,orz👻,辛苦了。  
 
 
-线上博客：[欢迎围观](https://removeif.github.io/)
+线上博客：[欢迎围观](https://removeif.github.io/)，[博客源码Live Demo](https://removeif.github.io/removeif-demo/)
 
 ### 一、icarus主题之上主要改动
 + 新增gitalk最新评论widget

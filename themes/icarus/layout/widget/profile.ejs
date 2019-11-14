@@ -43,9 +43,11 @@
                     <p class="heading">
                         <%= _p('common.post', post_count()) %>
                     </p>
-                    <p class="title has-text-weight-normal">
-                        <%= post_count() %>
-                    </p>
+                    <a href="<%= url_for('/archives') %>">
+                        <p class="title has-text-weight-normal ios-alert">
+                            <%= post_count() %>
+                        </p>
+                    </a>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
@@ -53,9 +55,11 @@
                     <p class="heading">
                         <%= _p('common.category', category_count()) %>
                     </p>
-                    <p class="title has-text-weight-normal">
-                        <%= category_count() %>
-                    </p>
+                    <a href="<%= url_for('/categories') %>">
+                        <p class="title has-text-weight-normal ios-alert">
+                            <%= category_count() %>
+                        </p>
+                    </a>
                 </div>
             </div>
             <div class="level-item has-text-centered is-marginless">
@@ -63,9 +67,11 @@
                     <p class="heading">
                         <%= _p('common.tag', tag_count()) %>
                     </p>
-                    <p class="title has-text-weight-normal">
-                        <%= tag_count() %>
-                    </p>
+                   <a href="<%= url_for('/tags') %>">
+                       <p class="title has-text-weight-normal ios-alert">
+                            <%= tag_count() %>
+                        </p>
+                    </a>
                 </div>
             </div>
         </nav>
@@ -91,5 +97,8 @@
             <% } %>
         </div>
         <% } %>
+        <hr>
+        <p id="hitokoto">:D 一言句子获取中...</p>
+        <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
     </div>
 </div>

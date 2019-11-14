@@ -194,7 +194,7 @@ widgets:
     -
         type: links
         # Where should the widget be placed, left or right
-        position: left
+        position: right
         # Links to be shown in the links widget
         links:
             微博: 'https://weibo.com/u/3050419984'
@@ -214,6 +214,12 @@ widgets:
             2019.08.11：网站升级:
             2019.02.01：采用Icarus主题:
             2018.11.11：建站:
+    -
+        # Widget name
+        type: subscribe_email
+        feedburner_id: xxxx # feedburner_id required ，a subscribe email widget currently only support feedburner https://feedburner.google.com/
+        description: 赶紧订阅，不错过任何精彩文章
+        position: right
 
 # Other plugin settings
 plugins:

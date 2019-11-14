@@ -21,6 +21,7 @@
                 <% } %>
                 <% if (post.categories && post.categories.length) { %>
                 <div class="level-item">
+                <i class="fas fa-folder-open has-text-grey"></i>&nbsp;
                 <%- list_categories(post.categories, {
                     class: 'has-link-grey ',
                     show_count: false,
@@ -59,7 +60,7 @@
         <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                    <i class="fas fa-tags has-text-grey"></i>&nbsp;
+                    <i class="fas fa-tags has-text-grey"></i>&nbsp;&nbsp;
                     <%- list_tags(post.tags, {
                         class: 'has-link-grey ',
                         show_count: false,
