@@ -13,11 +13,11 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-#url: / #https://removeif.github.io
-url: https://removeif.github.io
+url: / #https://removeif.github.io
+#url: https://removeif.github.io
 #root: /remove.io/
-root: /removeif-demo/
-#root: /
+#root: /removeif-demo/
+root: /
 permalink: :year/:month/:day/:title.html #文章的 永久链接 格式	:year/:month/:day/:title/
 permalink_defaults:
 
