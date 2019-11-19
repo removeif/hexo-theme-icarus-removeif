@@ -35,10 +35,10 @@ navbar:
         关于: /about
 
     # Navigation bar links to be shown on the right
-    links:
-        Download on GitHub:
-            icon: fab fa-github
-            url: 'https://github.com/removeif'
+#    links:
+#        Download on GitHub:
+#            icon: fab fa-github
+#            url: 'https://github.com/removeif'
 # Footer section link settings
 footer:
     # Links to be shown on the right of the footer section
@@ -217,8 +217,8 @@ widgets:
     -
         # Widget name
         type: subscribe_email
-        feedburner_id: xxxx # feedburner_id required ，a subscribe email widget currently only support feedburner https://feedburner.google.com/
-        description: 赶紧订阅，不错过任何精彩文章
+        feedburner_id: removeifFeedsId # feedburner_id required ，a subscribe email widget currently only support feedburner https://feedburner.google.com/
+        description: 立即订阅跳转人机认证后，点击完成按钮！
         position: right
 
 # Other plugin settings

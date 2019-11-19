@@ -63,7 +63,7 @@ function loadCommentData(resultArr) {
             var isSubStr = true;
             contentStr = contentStr.replace(" ", "");
             contentStr = contentStr.replace("&nbsp;", "");
-            contentStr = contentStr.replace(/(-)+>/g," to ");
+            contentStr = contentStr.replace(/(-)+>/g, " to ");
             while (isSubStr) {
                 if (contentStr.lastIndexOf(">") != -1) {
                     var temp = contentStr.substr(contentStr.lastIndexOf(">") + 1);
@@ -151,7 +151,7 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
         var COMMENT_CACHE = localStorage.getItem(COMMENT_CACHE_KEY);
         var COMMENT = {};
 
-        if (COMMENT_CACHE != '') {
+        if (COMMENT_CACHE != '' || COMMENT_CACHE != null) {
             // 异常不影响结果，继续往下执行
             try {
                 COMMENT = JSON.parse(COMMENT_CACHE);
@@ -163,7 +163,7 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
         }
 
 
-        if (COMMENT_CACHE == '' || new Date().getTime() - COMMENT["date"] > 60 * 1000 * 10) { // request per 10 minutes
+        if (COMMENT_CACHE == '' || COMMENT_CACHE == null || new Date().getTime() - COMMENT["date"] > 60 * 1000 * 10) { // request per 10 minutes
             console.log("req data...");
             var resultMap = {};
             var resultArr = [];
@@ -181,7 +181,7 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
 
         if (COMMENT_ARR.length > 0) {
             // 热门评论内容
-            var htmlContentWidget ="<div class='comment-content'>";
+            var htmlContentWidget = "<div class='comment-content'>";
             for (var i = 0; i < COMMENT_ARR.length; i++) {
                 var item = COMMENT_ARR[i];
                 var contentStr = item.content;
