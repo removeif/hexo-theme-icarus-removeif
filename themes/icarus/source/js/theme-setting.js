@@ -1,4 +1,5 @@
 // 是否为黑夜
+var expireTime1H = 1000 * 60 * 60; // 1小时过期
 var isNightRange = function (beginTime, endTime) {
     let nowDate = new Date();
     var nowTime = nowDate.getHours() + ":" + nowDate.getMinutes();
@@ -38,7 +39,7 @@ var isNightRange = function (beginTime, endTime) {
 }
 
 
-var isNight = localStorage.getItem('night');
+var isNight = localStorage.getExpire('night');
 
 // 第一次进来判断是白天还是晚上
 if (isNight == null || isNight == undefined) {
@@ -47,7 +48,7 @@ if (isNight == null || isNight == undefined) {
     } else {
         isNight = 'false';
     }
-    localStorage.setItem("night", isNight);
+    localStorage.setExpire("night", isNight, expireTime1H);
 }
 
 // 参考自 https://www.imaegoo.com/
@@ -92,7 +93,7 @@ function switchNight() {
     }
 
     applyNight(isNight);
-    localStorage.setItem('night', isNight);
+    localStorage.setExpire('night', isNight, expireTime1H);
 }
 
 findNightIcon();
