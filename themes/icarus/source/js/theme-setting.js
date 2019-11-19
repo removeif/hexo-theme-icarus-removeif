@@ -42,7 +42,7 @@ var isNight = localStorage.getItem('night');
 
 // 第一次进来判断是白天还是晚上
 if (isNight == null || isNight == undefined) {
-    if (isNightRange("19:00", "7:00")) {
+    if (isNightRange("19:00", "23:59") || isNightRange("00:00", "07:00")) {
         isNight = 'true';
     } else {
         isNight = 'false';
