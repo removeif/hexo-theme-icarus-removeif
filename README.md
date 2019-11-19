@@ -1,6 +1,8 @@
 # 话不多说，先看两张图
 ## 首页
 ![首页](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191104185039.png)
+## night模式
+![night](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191119181406.png)
 ## 文章
 ![文章](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191104185116.png)
 ### 写在前面
@@ -24,6 +26,7 @@
 + 置顶文章的设置
 + 文章列表评论数显示
 + 文章中推荐文章模块配置 
++ 增加night切换
 
 ### 二、部分配置说明：
 
