@@ -1147,11 +1147,36 @@ night-link = #3273dc
   #post-calendar canvas,
   .waifu canvas,
   .is-current,
+  .button.is-marginless .fab, .fas,
+  .button.is-large,
+  .gt-btn,
+  .gt-comment-body pre,
+  .time-axis-main,
+  .meplayer-control-play,
+  input,
   img {
     filter: brightness(.6) !important
   }
 
+  figure {
+    filter: brightness(.7) !important
+  }
+
+  strong {
+    filter: brightness(.8) !important;
+  }
+
+  .content blockquote {
+    border-left: 3px solid #1e4584;
+  }
+
+
   // comment start
+
+  .markdown-body blockquote {
+    border-left: 0.25em solid #dfe2e590;
+  }
+
   .gt-container .gt-comment-content {
     background-color black !important
     color silver !important
@@ -1176,7 +1201,7 @@ night-link = #3273dc
   }
 
   .gt-container .gt-header-textarea {
-    background-color night-color
+    background-color black
   }
   .ins-section-container {
     background-color night-color
