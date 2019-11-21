@@ -5,7 +5,7 @@ favicon: /images/kaixinguo.png
 # Path or URL to RSS atom.xml
 rss: /atom.xml
 # Path or URL to the website's logo to be shown on the left of the navigation bar or footer
-logo: /images/ico.png
+logo: https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191121122803.png #https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191121115040.png
 # Open Graph metadata
 # https://hexo.io/docs/helpers.html#open-graph
 open_graph:
