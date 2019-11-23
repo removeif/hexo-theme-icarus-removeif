@@ -75,7 +75,7 @@ if (!page.year) { %>
         var titleText = (config.language && config.language.indexOf('zh') >= 0) ? '文章贡献' : 'Post Calendar';
 
         // calculate range.
-        var startDate = moment().subtract(0.75, 'years');
+        var startDate = moment().subtract(0.60, 'years');
         var endDate = moment();
         var rangeArr = '["' + startDate.format('YYYY-MM-DD') + '", "' + endDate.format('YYYY-MM-DD') + '"]';
 
@@ -104,7 +104,7 @@ if (!page.year) { %>
             title: {
                 top: 0,
                 text: '<%- titleText %>',
-                left: '45%',
+                left: '42%',
                 textStyle: {
                     color: '#3C4858'
                 }
@@ -131,7 +131,7 @@ if (!page.year) { %>
                 itemWidth: 12,
                 itemHeight: 12,
                 orient: 'horizontal',
-                left: '38%',
+                left: '35%',
                 bottom: 0
             },
             calendar: [{
