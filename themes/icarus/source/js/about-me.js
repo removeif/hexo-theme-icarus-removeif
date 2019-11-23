@@ -1,4 +1,5 @@
-
+// author by removef
+// https://removeif.github.io/
 Date.prototype.Format = function (fmt) { //author: meizz
     var o = {
         "M+": this.getMonth() + 1,                 //月份

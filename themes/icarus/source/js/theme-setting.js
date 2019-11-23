@@ -1,3 +1,5 @@
+// author by removef
+// https://removeif.github.io/
 // 是否为黑夜
 var expireTime1H = 1000 * 60 * 60; // 1小时过期
 var isNightRange = function (beginTime, endTime) {

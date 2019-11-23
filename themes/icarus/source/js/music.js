@@ -1,3 +1,5 @@
+// author by removef
+// https://removeif.github.io/
 // 音乐处理
 var lastIndex;
 var musicJsons;

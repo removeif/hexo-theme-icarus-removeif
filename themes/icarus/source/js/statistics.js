@@ -1,3 +1,5 @@
+// author by removef
+// https://removeif.github.io/
 function createtime() {
     var n = new Date("11/11/2018 00:00:00");
     now.setTime(now.getTime() + 250),
