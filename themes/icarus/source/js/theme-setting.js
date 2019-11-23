@@ -1,45 +1,5 @@
 // author by removef
 // https://removeif.github.io/
-// 是否为黑夜
-var expireTime1H = 1000 * 60 * 60; // 1小时过期
-var isNightRange = function (beginTime, endTime) {
-    let nowDate = new Date();
-    var nowTime = nowDate.getHours() + ":" + nowDate.getMinutes();
-    var strb = beginTime.split(":");
-    if (strb.length != 2) {
-        return false;
-    }
-
-    var stre = endTime.split(":");
-    if (stre.length != 2) {
-        return false;
-    }
-
-    var strn = nowTime.split(":");
-    if (stre.length != 2) {
-        return false;
-    }
-
-    var b = new Date();
-    var e = new Date();
-    var n = new Date();
-
-    b.setHours(strb[0]);
-    b.setMinutes(strb[1]);
-    e.setHours(stre[0]);
-    e.setMinutes(stre[1]);
-    n.setHours(strn[0]);
-    n.setMinutes(strn[1]);
-
-    console.log(n.getTime());
-    if (n.getTime() - b.getTime() > 0 && n.getTime() - e.getTime() < 0) {
-        return true;
-    } else {
-        console.log("now Date is：" + n.getHours() + ":" + n.getMinutes() + "，is not Night！");
-        return false;
-    }
-}
-
 
 var isNight = localStorage.getExpire('night');
 
