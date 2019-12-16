@@ -2,7 +2,7 @@
 ## 首页
 ![首页](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191104185039.png)
 ## night模式
-![night](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191119181406.png)
+![night模式](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191216235632.png)
 ## 文章
 ![文章](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191104185116.png)
 ### 写在前面
