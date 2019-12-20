@@ -16,8 +16,8 @@
                 <%} %>
                 <time class="level-item has-text-grey" datetime="<%= date_xml(post.date) %>"><%= date(post.date) %></time>
                 <% if (get_config('comment.type') !== undefined && get_config('comment.type') == 'gitalk') { %>
-                    <span class="display-none-class"><%- md5(post.path) %></span>
-                    <img class="not-gallery-item" src="/images/chat.svg">&nbsp;<a href="<%- url_for(post.path) %>#comment-container"><span id=<%- md5(post.path) %>>99+</span></a>&nbsp;&nbsp;&nbsp;&nbsp;</img>
+                    <span class="display-none-class"><%- md5(get_path_end_str(post.path)) %></span>
+                    <img class="not-gallery-item" src="/images/chat.svg">&nbsp;<a href="<%- url_for(post.path) %>#comment-container"><span id=<%- md5(get_path_end_str(post.path)) %>>99+</span></a>&nbsp;&nbsp;&nbsp;&nbsp;</img>
                 <% } %>
                 <% if (post.categories && post.categories.length) { %>
                 <div class="level-item">
