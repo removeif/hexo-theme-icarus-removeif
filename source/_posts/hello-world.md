@@ -52,3 +52,14 @@ More info: [Deployment](https://hexo.io/docs/deployment.html)
 #### H4哈哈哈ha
 
 ##### H5哈哈哈ha
+
+#### code folded
+
+```java main.java folded
+import main.java
+private static void main(){
+    // test
+    int i = 0;
+    return 0;
+}
+```

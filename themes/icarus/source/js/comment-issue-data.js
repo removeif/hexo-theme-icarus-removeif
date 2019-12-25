@@ -171,7 +171,7 @@ $(document).ready(setTimeout(function () { // 延迟1s执行，保证其余的�
             }
         }
 
-        console.clear();
+        // console.clear();
         console.log("~~~~xiu xiu xiu 欢迎光临~~~");
         console.log("~~~~唉，控制台太多报错了，呜呜呜呜~~~");
         console.log("~~~~记得有时间多来看看哦，https://removeif.github.io/")
