@@ -13,7 +13,7 @@ Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [docume
 
 ### Create a new post
 
-``` bash
+``` bash >folded
 $ hexo new " My New Post"
 ```
 
@@ -55,7 +55,7 @@ More info: [Deployment](https://hexo.io/docs/deployment.html)
 
 #### code folded
 
-```java main.java folded
+```java main.java >folded
 import main.java
 private static void main(){
     // test

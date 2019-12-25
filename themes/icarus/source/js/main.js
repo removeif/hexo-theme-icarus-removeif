@@ -56,8 +56,8 @@
                 if ($(this).find('figcaption').length) {
 
                     // 此处find span,如果有自定义code 头，会找出 并且判断是否有folded
-                    // 使用示例，.md 文件中头行标记folded
-                    // ```java main.java folded
+                    // 使用示例，.md 文件中头行标记">folded"
+                    // ```java main.java >folded
                     // import main.java
                     // private static void main(){
                     //     // test
@@ -67,20 +67,22 @@
                     // ```
                     if ($(this).find('figcaption').find('span').length > 0) {
                         let spanArr = $(this).find('figcaption').find('span');
-                        if (spanArr[0].innerText.indexOf(" folded") > 0) {
+                        if (spanArr[0].innerText.indexOf(">folded") > -1) {
                             // 去掉folded
-                            spanArr[0].innerText = spanArr[0].innerText.replace(" folded", "")
+                            spanArr[0].innerText = spanArr[0].innerText.replace(">folded", "")
                             button = '<span class="fold"><i class="fas fa-angle-right"></i></span>';
                             $(this).find('figcaption').prepend(button);
 
                             // 收叠代码块
                             toggleFold(this, true);
+                            return;
                         }
                     }
+                    $(this).find('figcaption').prepend(button);
                 } else {
                     $(this).prepend('<figcaption>' + button + '</figcaption>');
-                    toggleFold(this, fold === 'folded');
                 }
+                toggleFold(this, fold === 'folded');
             });
 
             function toggleFold(codeBlock, isFolded) {
