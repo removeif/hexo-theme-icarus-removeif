@@ -27,20 +27,30 @@ function loadCommentData(resultArr) {
             var isSubStr = true;
             contentStr = contentStr.replace(" ", "");
             contentStr = contentStr.replace("&nbsp;", "");
-            contentStr = contentStr.replace(/(-)+>/g, " to ");
-            while (isSubStr) {
-                if (contentStr.lastIndexOf(">") != -1) {
-                    var temp = contentStr.substr(contentStr.lastIndexOf(">") + 1);
-                    if (temp == undefined || temp == "") {
-                        isSubStr = true;
-                        contentStr = contentStr.substr(0, contentStr.lastIndexOf(">") - 1);
+            let splitStr = "\n\n";
+            let conArr = contentStr.split(splitStr);
+            if (conArr.length == 2) {
+                contentStr = conArr[1];
+            } else if (conArr.length > 2) {
+                contentStr = contentStr.substr(contentStr.indexOf(splitStr) + 4);
+            } else {
+
+                contentStr = contentStr.replace(/(-)+>/g, " to ");
+                while (isSubStr) {
+                    if (contentStr.lastIndexOf(">") != -1) {
+                        var temp = contentStr.substr(contentStr.lastIndexOf(">") + 1);
+                        if (temp == undefined || temp == "") {
+                            isSubStr = true;
+                            contentStr = contentStr.substr(0, contentStr.lastIndexOf(">") - 1);
+                        } else {
+                            isSubStr = false;
+                            contentStr = temp;
+                        }
                     } else {
                         isSubStr = false;
-                        contentStr = temp;
                     }
-                } else {
-                    isSubStr = false;
                 }
+
             }
 
             if (contentStr == undefined || contentStr == "") {
