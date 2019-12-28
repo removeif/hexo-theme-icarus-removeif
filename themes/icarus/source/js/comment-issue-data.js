@@ -27,11 +27,14 @@ function loadCommentData(resultArr) {
             var isSubStr = true;
             contentStr = contentStr.replace(" ", "");
             contentStr = contentStr.replace("&nbsp;", "");
+            // 第一次进来就有空格的情况
             let splitStr = "\n\n";
+            let firstComm = contentStr.indexOf(">") > -1;
             let conArr = contentStr.split(splitStr);
-            if (conArr.length == 2) {
+
+            if (conArr.length == 2 && firstComm) {
                 contentStr = conArr[1];
-            } else if (conArr.length > 2) {
+            } else if (conArr.length > 2 && firstComm) {
                 contentStr = contentStr.substr(contentStr.indexOf(splitStr) + 4);
             } else {
 
