@@ -6,6 +6,6 @@ document.addEventListener('DOMContentLoaded', function () {
         if ($('.justified-gallery > p > .gallery-item').length) {
             $('.justified-gallery > p > .gallery-item').unwrap();
         }
-        $('.justified-gallery').justifiedGallery({rowHeight:220, margins:4});
+        $('.justified-gallery').justifiedGallery({rowHeight:230, margins:4});
     }
 });

@@ -1,36 +1,24 @@
 ---
-title: 
-date: 2019-07-30 09:33:48
-thumbnail: http://wx1.sinaimg.cn/large/b5d1b710ly1g6s77l1eikj212w0gbn7r.jpg
+title: 音乐歌单收藏
+date: 2019-07-30 10:43:45
 ---
-<div class="music-container">
-        <div class="video-player">
-        <div class="d-title">
-                <i class="fa fa-music"></i>&nbsp;&nbsp;听听音乐
-        </div>
-    </div>
-    <div id="musicarea">
-        <div class="music"></div>
-        <p id="p_message"><span id="music_story_message" class="span_animation"></span></p>
-        <ul id="musiclist"></ul>
-        <div id="desc"><div>
-    </div>
-<div>
 
-<link rel="stylesheet" href="/css/meplayer.min.css">
-<script type="text/javascript" defer src="/js/meplayer.js"></script>
-<script type="text/javascript" defer src="/js/music.js"></script>
-
-<br>
-<p style = "text-align:center"><span style="font-size:13px;">音乐播放器由<a href="https://github.com/newraina/mePlayer" target="_blank" rel="noopener">mePlayer</a>提供，布局参照<a href="https://dp2px.com/music/" target="_blank" rel="noopener">网友博客</a>所作，感谢作者的辛勤付出。有好听的音乐欢迎分享。</span></p>
-<link rel="stylesheet" href="/css/DPlayer.min.css">
-    <div class="video-player">
-        <div class="d-title">
-                <i class="fa fa-video-camera"></i>&nbsp;&nbsp;看看视频
-        </div>
-            <p class="hits">->点击以下条目开始播放视频,向下滑动查看更多<-</p>
-            <div id="video-list"></div>
-            <div id="dplayer">
-            </div>
-    </div>
-<script src="/js/DPlayer.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css">
+<script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+<!-- require MetingJS -->
+<script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+<meting-js style="width: auto;height: 2000px;"
+    server="netease"
+    type="playlist"
+    id="2364053447"
+    theme="#2980b9"
+    loop="all"
+    autoplay="false"
+    order="list"
+    storageName="aplayer-setting"
+    lrctype= 0
+    list-max-height="800px"
+    >
+</meting-js>
+---
+<p style="text-align:center;margin-top:30px"><span style="font-size:14px">温馨提示：选择喜欢的音乐双击播放，由于版权原因部分不能播放。如果喜欢歌单<a href="https://music.163.com/#/user/home?id=132033817" target="_blank" rel="noopener">收藏</a>一下，去网易云都能播放哟！<span></span></span></p>

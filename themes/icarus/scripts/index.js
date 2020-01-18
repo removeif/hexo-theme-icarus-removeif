@@ -1,27 +1,29 @@
-require('../includes/tasks/welcome');
-require('../includes/tasks/check_deps');
-require('../includes/tasks/check_config');
-require('../includes/generators/categories')(hexo);
-require('../includes/generators/category')(hexo);
-require('../includes/generators/tags')(hexo);
-require('../includes/generators/insight')(hexo);
-require('../includes/filters/highlight')(hexo);
-require('../includes/helpers/cdn')(hexo);
-require('../includes/helpers/config')(hexo);
-require('../includes/helpers/layout')(hexo);
-require('../includes/helpers/override')(hexo);
-require('../includes/helpers/page')(hexo);
-require('../includes/helpers/site')(hexo);
+/* global hexo */
+const logger = require('hexo-log')();
 
-// Fix large blog rendering OOM
-const postHtmlFilter = hexo.extend.filter.list()['after_render:html'];
-for (let filter of postHtmlFilter) {
-    if (filter.name === 'hexoMetaGeneratorInject') {
-        hexo.extend.filter.unregister('after_render:html', filter);
-    }
-}
+/**
+ * Print welcome message
+ */
+logger.info(`=======================================
+ ██╗ ██████╗ █████╗ ██████╗ ██╗   ██╗███████╗
+ ██║██╔════╝██╔══██╗██╔══██╗██║   ██║██╔════╝
+ ██║██║     ███████║██████╔╝██║   ██║███████╗
+ ██║██║     ██╔══██║██╔══██╗██║   ██║╚════██║
+ ██║╚██████╗██║  ██║██║  ██║╚██████╔╝███████║
+ ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝  ╚═╝ ╚═════╝ ╚══════╝
+=============================================`);
 
-// Debug helper
-hexo.extend.helper.register('console', function () {
-    console.log(arguments)
-});
+/**
+ * Check if all dependencies are installed
+ */
+require('../include/dependency')(hexo);
+
+/**
+ * Configuration file checking and migration
+ */
+require('../include/config')(hexo);
+
+/**
+ * Register Hexo extensions and remove Hexo filters that could cause OOM
+ */
+require('../include/register')(hexo);

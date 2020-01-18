@@ -27,6 +27,9 @@
 + 文章列表评论数显示
 + 文章中推荐文章模块配置 
 + 增加深色主题切换
++ 加入加密文章
++ 碎碎念功能
++ 透明无界样式
 
 ### 二、部分配置说明：
 
@@ -127,28 +130,52 @@ comment:
 themes/icarus/source/live2d/waifu-tips.js  
 themes/icarus/source/live2d/autoload.js   
 上面两个位置可以配置相关的显示，以及模型。
+`2.0版本之后只需要在_config.yml配置即可`
+```text
+live2Dswitch: off #live2D开关 on为打开,off为关闭
+```
 
 #### 6.置顶设置：
-.md文章文件中头部加入了top字段，初始值是100，如果要置顶，需要设置为大于100的值，值越大越靠前。相等时，根据时间降序。  
-修改依赖包中文件removeif/node_modules/hexo-generator-index/lib/generator.js如下：
-```js
+.md文章文件中头部加入了top字段，初始值是100，如果要置顶，需要设置为大于100的值，值越大越靠前。相等时，根据时间降序。(v2.0之前)  
+`v2.0之后，默认不加入top,top值越大越靠前，大于0显示置顶图标。`
+**v2.0之后**修改依赖包中文件removeif/node_modules/hexo-generator-index/lib/generator.js如下：
+```js 
 'use strict';
-var pagination = require('hexo-pagination');
+
+const pagination = require('hexo-pagination');
+
 module.exports = function(locals){
     var config = this.config;
     var posts = locals.posts;
     posts.data = posts.data.sort(function(a, b) {
-        if(a.top && b.top) { // 两篇文章top都有定义
-            if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排
-            else return b.top - a.top; // 否则按照top值降序排
+
+
+        if(a.top == undefined){
+            a.top = 0;
         }
-        else if(a.top && !b.top) { // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）
-            return -1;
+        if(b.top == undefined){
+            b.top = 0;
         }
-        else if(!a.top && b.top) {
-            return 1;
+
+        if(a.top == b.top){
+            return b.date - a.date;
+        }else{
+           return b.top - a.top;
         }
-        else return b.date - a.date; // 都没定义按照文章日期降序排
+        //
+        // console.log("a.top="+a.top+",b.top="+b.top)
+        //
+        // if(a.top && b.top) { // 两篇文章top都有定义
+        //     if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排
+        //     else return b.top - a.top; // 否则按照top值降序排
+        // }
+        // else if(a.top && !b.top) { // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）
+        //     return -1;
+        // }
+        // else if(!a.top && b.top) {
+        //     return 1;
+        // }
+        // else return b.date - a.date; // 都没定义按照文章日期降序排
     });
     var paginationDir = config.pagination_dir || 'page';
     return pagination('', posts, {
@@ -174,7 +201,108 @@ thumbnail: https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/201909192216
 tags: 工具教程
 categories: [工具教程,主题工具]
 ```
+#### 8.文章中某个代码块折叠的方法
+代码块头部加入标记 "`>folded`"，如下。
+```java main.java >folded
+    // 使用示例，.md 文件中头行标记">folded"
+    // ```java main.java >folded
+    // import main.java
+    // private static void main(){
+    //     // test
+    //     int i = 0;
+    //     return i;
+    // }
+    // \\``` 
+import main.java
+private static void main(){
+  // test
+    int i = 0;
+    return i;
+}
+```
+#### 9.加入加密文章
+如下需要加密的文章头部加入以下代码
+```text
 
+---
+title: 2019成长记01
+top: -1
+toc: true
+keywords: categories-java
+
+#以下为文章加密信息
+encrypt: true
+password: 123456 #此处为文章密码
+abstract: 咦，这是一篇加密文章，好像需要输入密码才能查看呢！
+message: 嗨，请准确无误地输入密码查看哟！
+wrong_pass_message: 不好意思，密码没对哦，在检查检查呢！
+wrong_hash_message: 不好意思，信息无法验证！
+---
+```
+#### 10.碎碎念的使用
+在github中，创建碎碎念issue，并且打上对应的label（`eg:666666`），填写到source/self-talking/index.md文件中如下,
+```js
+<script>
+    var gitalk = new Gitalk({
+        clientID: '46a9f3481b46ea0129d8',
+        clientSecret: '79c7c9cb847e141757d7864453bcbf89f0655b24',
+        id: '666666',
+        repo: 'issue_database',
+        owner: 'removeif',
+        admin: "removeif",
+        createIssueManually: true,
+        distractionFreeMode: false
+    })
+    gitalk.render('comment-container1')
+</script>
+```
+#### 11.本博客样式（透明无界）
+只需要放开themes/icarus/source/css/base.styl文件中以下样式代码注释即可，默认是注释的没启用
+```css 
+//=================本博客使用样式   start
+
+// 首页去图
+.body_hot_comment .comment-content .card-comment-item .ava, .media-left, .is-6-widescreen .card-image {
+    display: none;
+}
+
+hover-color = #deeafb;
+// 去card
+.card {
+    background-color: unset;
+    box-shadow: unset;
+}
+
+.navbar, footer.footer {
+    background-color: unset;
+}
+
+body:not(.night) .navbar:hover,
+body:not(.night) .footer:hover,
+body:not(.night) .card:hover,
+body:not(.night) .pagination:hover,
+body:not(.night) .post-navigation:hover{
+    background-color: hover-color;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05),0 0 1px rgba(0,0,0,0.1);
+}
+
+.pagination, .post-navigation{
+    padding: 10px;
+}
+
+.pagination .pagination-link:not(.is-current), .pagination .pagination-previous, .pagination .pagination-next {
+    background-color:rgba(255,255,255,0);
+}
+
+.timeline .media:last-child:after {
+    background: unset;
+}
+.content .gt-container .gt-comment-admin .gt-comment-content {
+    border: 2px solid #deeafb;
+}
+
+//=================本博客使用样式   end
+```
 #### 以上配置好后
 ```yaml
 $ npm install hexo --save #安装依赖包（只需要执行一次）
@@ -184,7 +312,8 @@ $ hexo s #启动服务
 $ hexo d #推到远程 
 ```
 安装依赖包（只需要执行一次），以后修改了代码 只需要执行后面几条就好。  
-原来已有博客文章的迁移，只需要把原来对应的文章放到source/_posts里即可。然后去对应文章下面创建评论issue。
+原来已有博客文章的迁移，只需要把原来对应的文章放到source/_posts里即可。然后去对应文章下面创建评论issue。  
+widget中的归档和分类精简了，分别展示6条和21条。
 
 enjoy！！！！👏👏👏👏👏👏👏
 
@@ -196,18 +325,25 @@ enjoy！！！！👏👏👏👏👏👏👏
 ### 文章中横竖图demo；对于横竖图推荐分开使用，且长宽一致的，如统一手机拍照、电脑截图
 使用方法：md文章中放入以下代码
 ```html
-// 横图
-<div class="img-x">![v4](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191022182226.png)![v3](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191018114126.png)</div>
-// 竖图
-<div class="img-y">![打王者荣耀](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191024141906.jpg)![支付宝付款](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191024141926.jpg)![锤子便签](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191024145956.jpg)</div>
-// 横竖图justified-gallery
+
++ 横竖图
+
 <div class="justified-gallery">
-![张芷溪](http://wx1.sinaimg.cn/large/b5d1b710ly1g6bz7n92s7j212w0nr1kx.jpg)
-![李一桐](http://wx2.sinaimg.cn/mw1024/005RAHfgly1fvfc4f19qfj33402c0qv9.jpg)
-![李一桐](http://wx1.sinaimg.cn/mw1024/005RAHfgly1fuzz17s2q3j32e43cku0x.jpg)
-![gakki](http://wx1.sinaimg.cn/mw1024/70396e5agy1g5qe44xrp9j214u0x6grm.jpg)
-![gakki](http://wx1.sinaimg.cn/mw1024/70396e5agy1g5qe457i6yj21660ogtap.jpg)
-</div>
+
+![张芷溪](http://wx1.sinaimg.cn/large/b5d1b710ly1g6bz7n92s7j212w0nr1kx.jpg) ![李一桐](http://wx2.sinaimg.cn/mw1024/005RAHfgly1fvfc4f19qfj33402c0qv9.jpg) ![gakki](http://wx1.sinaimg.cn/mw1024/70396e5agy1g5qe457i6yj21660ogtap.jpg) ![李一桐](http://wx1.sinaimg.cn/mw1024/005RAHfgly1fuzz17s2q3j32e43cku0x.jpg) ![彭小苒](http://wx1.sinaimg.cn/mw1024/d79c9b94ly1g1pb1uthr5j21f02iox6t.jpg)</div>
+
++ 横图4
+
+<div class="img-x">
+
+![v4](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191022182226.png) ![v3](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191018114126.png) ![v4](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191022182226.png) ![v3](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191018114126.png)</div>
+
++ 竖图5
+
+<div class="img-y">
+
+![电池](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191024145940.jpg) ![打王者荣耀](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191024141906.jpg) ![支付宝付款](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191024141926.jpg) ![锤子便签](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191024145956.jpg) ![电池](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191024145940.jpg)</div>
+
 ```
 #### 效果如下（多图左右拉查看）
 [查看效果](https://removeif.github.io/2019/09/19/%E5%8D%9A%E5%AE%A2%E6%BA%90%E7%A0%81%E5%88%86%E4%BA%AB.html#效果如下（多图左右拉查看）)

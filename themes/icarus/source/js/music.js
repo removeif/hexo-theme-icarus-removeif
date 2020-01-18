@@ -7,7 +7,7 @@ $.getJSON("../json_data/music.json", function (data) {
     musicJsons = data;
     for (var i = 0; i < musicJsons.length; i++) {
         musicJsons[i].loop = false;
-        var $li = $('<li><span>' + musicJsons[i].title + '</span>&nbsp;&nbsp;&nbsp;&nbsp;时长：' + musicJsons[i].time + '&nbsp;&nbsp;&nbsp;&nbsp; 歌手：' + musicJsons[i].author + '</li>')
+        var $li = $('<li><span>' + musicJsons[i].title + '</span>&nbsp;&nbsp;&nbsp;&nbsp;时长：' + musicJsons[i].time + '&nbsp;&nbsp;&nbsp;&nbsp; 歌手：' + musicJsons[i].author + '</li>');
         $li.attr('id', i);
         $li.css('list-style-type', 'none');
         $li.css('height', '40px');
@@ -59,7 +59,7 @@ function playMusic(data, playendcallback) {
 // 视频处理
 var lastVideoIndex;
 $.getJSON("../json_data/video.json", function (data) {
-    $('#video-list').append("")
+    $('#video-list').append("");
     for (var i = 0; i < data.length; i++) {
         var $li = $("<blockquote>"+(i+1)+"." + data[i].desc + "</blockquote>");
         $li.attr('id', i);
@@ -72,7 +72,7 @@ $.getJSON("../json_data/video.json", function (data) {
         $('#video-list').append($li);
     }
 
-})
+});
 
 function playVideo(data,id) {
     new DPlayer({

@@ -16,13 +16,12 @@ common:
 widget:
     follow: 'Follow'
     recents: 'Recent'
-    recommend_posts: 'Recommend Posts'
     links: 'Links'
     tag_cloud: 'Tag Cloud'
     catalogue: 'Catalogue'
-    email:
-        title: 'Subscribe Email'
-        button: 'Subscribe'
+    subscribe_email: 'Subscribe to Updates'
+    subscribe: 'Subscribe'
+    adsense: 'Advertisement'
 article:
     more: 'Read More'
     comments: 'Comments'
@@ -35,6 +34,7 @@ donate:
     wechat: 'Wechat'
     paypal: 'Paypal'
     patreon: 'Patreon'
+    buymeacoffee: 'Buy me a coffee'
 plugin:
     backtotop: 'Back to Top'
     visit: '%s visits'

@@ -1,5 +1,0 @@
-<span class="is-size-6 has-text-grey has-mr-7">#&nbsp;<%= __('widget.recommend_posts') %></span>
-<br>
-<% var i = 1;posts.forEach(post => { %>
-    &nbsp;<%=i %>.<a href="<%- url_for((post.link?post.link:post.path)) %>" class="is-size-6" target="_blank"><%= post.title %></a><br>
-<% i++;}) %>

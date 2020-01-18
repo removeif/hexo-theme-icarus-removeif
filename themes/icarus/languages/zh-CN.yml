@@ -16,13 +16,13 @@ common:
 widget:
     follow: '关注我'
     recents: '最新文章'
-    recommend_posts: '本站推荐文章'
     links: '链接'
     tag_cloud: '标签云'
     catalogue: '目录'
-    email:
-        title: '订阅邮件'
-        button: '立即订阅'
+    subscribe_email: '订阅更新'
+    subscribe: '订阅'
+    adsense: '广告'
+    recommend_posts: '推荐文章'
 article:
     more: '阅读更多'
     comments: '评论'
@@ -33,10 +33,11 @@ donate:
     title: '喜欢这篇文章？打赏一下作者吧'
     alipay: '支付宝'
     wechat: '微信'
+    buymeacoffee: '送我杯咖啡'
 plugin:
     backtotop: '回到顶端'
-    visit: '1%s 次查看'
-    visitor: '❤️感谢 %s 小伙伴的 '
+    visit: '%s次访问'
+    visitor: '共%s个访客'
 search:
     search: '搜索'
     hint: '想要查找什么...'
