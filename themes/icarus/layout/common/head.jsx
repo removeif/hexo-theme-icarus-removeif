@@ -148,7 +148,7 @@ module.exports = class extends Component {
             {config.live2Dswitch == 'on' ?<div>
                 <link rel="stylesheet" href={url_for('/live2d/waifu.css')}/>
                 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-                <script type="text/javascript" async="" src={url_for('/live2d/autoload.js')}></script></div>: null}
+                <script type="text/javascript" async={true} src={url_for('/live2d/autoload.js')}></script></div>: null}
         </head>;
     }
 };
