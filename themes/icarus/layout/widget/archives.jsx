@@ -6,7 +6,8 @@ class Archives extends Component {
         const {
             items,
             title,
-            showCount
+            showCount,
+            allUrl
         } = this.props;
         var count = 0;
 
@@ -17,7 +18,7 @@ class Archives extends Component {
                     <ul class="menu-list">
                         {/*限制只返回5个月的，太多显示不好看*/}
                         {items.map(archive => {
-                          return  count++ <= 5 ? <li>
+                          return  count++ < 5 ? <li>
                                 <a class="level is-mobile is-marginless" href={archive.url}>
                                 <span class="level-start">
                                     <span class="level-item">{archive.name}</span>
@@ -28,6 +29,13 @@ class Archives extends Component {
                                 </a>
                             </li> : null
                         })}
+                        {count >= 5 ?
+                            <a className="level is-mobile is-marginless" href={allUrl}>
+                                <span className="level-start">
+                                    <span className="level-item">查看全部>></span>
+                                </span>
+                            </a> : null
+                        }
                     </ul>
                 </div>
             </div>
@@ -104,6 +112,7 @@ module.exports = cacheComponent(Archives, 'widget.archives', props => {
             url: link(item)
         })),
         title: _p('common.archive', Infinity),
-        showCount: show_count
+        showCount: show_count,
+        allUrl: url_for('/archives/')
     };
 });

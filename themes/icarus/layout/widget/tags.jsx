@@ -7,7 +7,8 @@ class Tags extends Component {
             tags,
             title,
             showCount,
-            isPage
+            isPage,
+            allUrl
         } = this.props;
         var count = 0;
 
@@ -16,13 +17,20 @@ class Tags extends Component {
                 <div class="menu">
                     <h3 class="menu-label">{title}</h3>
                     <div class="field is-grouped is-grouped-multiline">
-                        {tags.sort((a, b)=> b.count-a.count).map(tag => { return (count++ <= 20 || isPage)?<div class="control">
+                        {tags.sort((a, b)=> b.count-a.count).map(tag => { return (count++ < 20 || isPage)?<div class="control">
                             <a class="tags has-addons" href={tag.url}>
                                 <span class="tag">{tag.name}</span>
                                 {showCount ? <span class="tag is-grey-lightest">{tag.count}</span> : null}
                             </a>
                         </div>:null})}
                     </div>
+                    {!isPage && count >= 20 ?
+                        <div className="field is-grouped is-grouped-multiline">
+                            <a className="tags has-addons" href={allUrl}>
+                                <span className="tag">查看全部>></span>
+                            </a>
+                        </div> : null
+                    }
                 </div>
             </div>
         </div>;
@@ -59,6 +67,7 @@ module.exports = cacheComponent(Tags, 'widget.tags', props => {
             count: tag.length,
             url: url_for(tag.path)
         })),
-        isPage
+        isPage,
+        allUrl: url_for('/tags/')
     };
 });

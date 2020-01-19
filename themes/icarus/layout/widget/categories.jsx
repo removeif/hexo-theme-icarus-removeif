@@ -2,8 +2,10 @@ const { Component } = require('inferno');
 const { cacheComponent } = require('../util/cache');
 
 class Categories extends Component {
-    renderList(categories, showCount) {
-        return categories.map(category => <li>
+
+
+    renderList(categories, showCount,count,isPage) {
+        return categories.map(category => {return (count.n++ < 10 || isPage) ?<li>
             <a class="level is-mobile is-marginless" href={category.url}>
                 <span class="level-start">
                     <span class="level-item">{category.name}</span>
@@ -12,23 +14,33 @@ class Categories extends Component {
                     <span class="level-item tag">{category.count}</span>
                 </span> : null}
             </a>
-            {category.children.length ? <ul class="mr-0">{this.renderList(category.children, showCount)}</ul> : null}
-        </li>);
+            {category.children.length ? <ul class="mr-0">{this.renderList(category.children, showCount,count,isPage)}</ul> : null}
+        </li>:null});
     }
 
     render() {
         const {
             title,
             showCount,
-            categories
+            categories,
+            isPage,
+            allUrl
         } = this.props;
+        var count={n: 0};
 
         return <div class="card widget">
             <div class="card-content">
                 <div class="menu">
                     <h3 class="menu-label">{title}</h3>
                     <ul class="menu-list">
-                        {this.renderList(categories, showCount)}
+                        {this.renderList(categories, showCount,count,isPage)}
+                        {count.n >= 10 && !isPage ?
+                            <a className="level is-mobile is-marginless" href={allUrl}>
+                                <span className="level-start">
+                                    <span className="level-item">查看全部>></span>
+                                </span>
+                            </a> : null
+                        }
                     </ul>
                 </div>
             </div>
@@ -45,7 +57,8 @@ module.exports = cacheComponent(Categories, 'widget.categories', props => {
         orderBy = 'name',
         order = 1,
         show_current = false,
-        show_count = true
+        show_count = true,
+        isPage
     } = props;
     const { url_for, _p } = helper;
 
@@ -103,6 +116,8 @@ module.exports = cacheComponent(Categories, 'widget.categories', props => {
     return {
         showCount: show_count,
         categories: hierarchicalList(0),
-        title: _p('common.category', Infinity)
+        title: _p('common.category', Infinity),
+        allUrl: url_for('/categories/'),
+        isPage: isPage
     };
 });
