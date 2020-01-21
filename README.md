@@ -239,6 +239,7 @@ wrong_pass_message: 不好意思，密码没对哦，在检查检查呢！
 wrong_hash_message: 不好意思，信息无法验证！
 ---
 ```
+加密文章不会出现在最新文章列表widget中，也不会出现在文章中推荐列表中，首页列表中需要设置top: -1 让它排在最后。
 #### 10.碎碎念的使用
 在github中，创建碎碎念issue，并且打上对应的label（`eg:666666`），填写到source/self-talking/index.md文件中如下,
 ```js

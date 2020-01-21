@@ -22,7 +22,7 @@ module.exports = cacheComponent(RecommendPosts, 'widget.recommendposts', props =
     if (!site.posts.length) {
         return null;
     }
-    const posts = site.posts.filter((item, index, arr) => item.recommend != undefined && item.recommend > 0).sort('recommend',-1).sort('recommend',-1).limit(5).map(post => ({
+    const posts = site.posts.filter((item, index, arr) => item.encrypt != true && item.recommend != undefined && item.recommend > 0).sort('recommend',-1).sort('recommend',-1).limit(5).map(post => ({
         url: url_for(post.link || post.path),
         title: post.title,
         date: date(post.date),

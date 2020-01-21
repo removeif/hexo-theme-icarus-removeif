@@ -29,7 +29,7 @@ module.exports = cacheComponent(RecentPosts, 'widget.recentposts', props => {
     if (!site.posts.length) {
         return null;
     }
-    const posts = site.posts.sort('date', -1).limit(5).map(post => ({
+    const posts = site.posts.sort('date', -1).filter((item, index, arr) => item.encrypt != true).limit(5).map(post => ({
         url: url_for(post.link || post.path),
         title: post.title,
         date: date(post.date),
