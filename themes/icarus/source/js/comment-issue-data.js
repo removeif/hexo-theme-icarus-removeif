@@ -7,6 +7,8 @@ var clientSecret = "79c7c9cb847e141757d7864453bcbf89f0655b24";
 var reqCommentCountUrl = repoIssuesUrl + "?client_id=" + clientId + "&client_secret=" + clientSecret + "&t=" + new Date().getTime() + "&labels=Gitalk,";
 // 评论缓存key
 var COMMENT_CACHE_KEY = "commentKey";
+// 管理员名称,评论时添加 [博主] 后缀
+var ADMIN_NAME = "removeif";
 
 function writeHtmlCommentCountValueById(id) {
     $.getJSON(reqCommentCountUrl + id, function (result) {
@@ -81,10 +83,14 @@ function loadCommentDataAndRender() {
             $.getJSON(item.issue_url + "?client_id=" + clientId + "&client_secret=" + clientSecret, function (result) {
                 itemUrl = result.body.substr(0, result.body.indexOf("\n") - 1);
                 // 放入
+                let userName = item["user"].login;
+                if(userName != undefined && userName != '' && userName == ADMIN_NAME){
+                    userName += '[博主]';
+                }
                 resultArr.push({
                     "content": contentStr,
                     "date": item.created_at,
-                    "userName": item["user"].login,
+                    "userName": userName,
                     "userUrl": item["user"].html_url,
                     "userAvatar": item["user"].avatar_url,
                     "url": itemUrl
