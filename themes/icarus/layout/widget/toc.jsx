@@ -100,7 +100,7 @@ class Toc extends Component {
             return null;
         }
 
-        return <div class="card widget" id="toc">
+        return <div class="card widget toc-scroll" id="toc">
             <div class="card-content">
                 <div class="menu">
                     <h3 class="menu-label">{this.props.title}</h3>
