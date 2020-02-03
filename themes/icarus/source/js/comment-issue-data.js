@@ -39,6 +39,12 @@ function loadCommentDataAndRender() {
             let firstComm = contentStr.indexOf(">") > -1;
             let conArr = contentStr.split(splitStr);
 
+            // 针对在github上回复的评论
+            if (conArr.length != 2) {
+                let splitStr1 = "\r\n\r\n";
+                conArr = contentStr.split(splitStr1);
+            }
+
             if (conArr.length == 2 && firstComm) {
                 contentStr = conArr[1];
             } else if (conArr.length > 2 && firstComm) {
