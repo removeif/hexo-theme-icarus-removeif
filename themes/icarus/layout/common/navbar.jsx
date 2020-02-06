@@ -28,7 +28,7 @@ class Navbar extends Component {
             searchTitle
         } = this.props;
 
-        return <nav class="navbar navbar-main">
+        return <nav class="navbar navbar-main is-fixed-top">
             <div class="container">
                 <div class="navbar-brand justify-content-center">
                     <a class="navbar-item navbar-logo" href={siteUrl}>

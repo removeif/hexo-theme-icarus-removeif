@@ -84,8 +84,8 @@ class Toc extends Component {
         }
         if ('id' in toc && 'index' in toc && 'text' in toc) {
             result = <li>
-                <a class="is-flex" href={'#' + toc.id}>
-                    <span class="mr-2">{toc.index}</span>
+                <a class="is-flex" id={`toc-item-${toc.id}`} href={'#' + toc.id}>
+                    {/*<span class="mr-2">{toc.index}</span>*/}
                     <span>{toc.text}</span>
                 </a>
                 {result}
@@ -96,6 +96,51 @@ class Toc extends Component {
 
     render() {
         const toc = getToc(this.props.content);
+        //toc highlight
+        const js = `
+        $(document).ready(function () { //参考自 https://github.com/ppoffice/hexo-theme-icarus/pull/616/files
+            var observerTopMargin;
+            var scrollObserver;
+            var headerElems = $(".headerlink");
+            var activeTocItem;
+        
+            function initIntersectionObserver(docHeight) {
+                observerTopMargin = docHeight;
+                scrollObserver = new IntersectionObserver(scrollCallBack,
+                    {
+                        root: null,  // viewpoint
+                        rootMargin: docHeight + "px 0px -80% 0px"  // cover top 30% of viewport to the top of document
+                    })
+            }
+        
+            function scrollCallBack(entries, observer) {
+                if ($(window).scrollTop() > observerTopMargin * 0.7) { 
+                    // User somehow scroll to 70% of observerTopMargin (which is inited as 200% document height)
+                    // Observer top margin need to extend to cover all the space to the top of the document
+                    initIntersectionObserver(observerTopMargin * 2)
+                    observer.disconnect();
+                    return;
+                }
+                let toActive;
+                if (entries[0].intersectionRatio == 1) {  // enter viewed area
+                    let entry = entries.reduce((u, v) => (u.target.toc_id > v.target.toc_id ? u : v));  // get the lowest item
+                    toActive = $("#toc-item-" + $(entry.target).attr("href").substr(1));
+                } else {
+                    let entry = entries.reduce((u, v) => (u.target.toc_id < v.target.toc_id ? u : v));  // get the highest item
+                    let idx = Math.max(entry.target.toc_id - 1, 0);
+                    toActive = $("#toc-item-" + $(headerElems[idx]).attr("href").substr(1));
+                }
+                if (activeTocItem) activeTocItem.removeClass("is-current");
+                activeTocItem = toActive
+                activeTocItem.addClass("is-current");
+            }
+        
+            initIntersectionObserver($(document).height() * 2);
+            headerElems.each(function (index, obj) {
+                obj.toc_id = index;
+                scrollObserver.observe(obj);
+            })
+        });`;
         if (!Object.keys(toc).length) {
             return null;
         }
@@ -107,6 +152,7 @@ class Toc extends Component {
                     {this.renderToc(toc)}
                 </div>
             </div>
+            <script type="text/javascript" dangerouslySetInnerHTML={{ __html: js }}></script>
         </div>;
     }
 }

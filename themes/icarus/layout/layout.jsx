@@ -35,7 +35,7 @@ module.exports = class extends Component {
 
         return <html lang={language ? language.substr(0, 2) : ''}>
             <Head env={env} site={site} config={config} helper={helper} page={page} />
-            <body class={`is-${columnCount}-column`}>
+            <body class={`is-${columnCount}-column has-navbar-fixed-top`}>
                 <Navbar config={config} helper={helper} page={page} />
                 <script type="text/javascript" src="/js/theme-setting.js"></script>
                 <section class="section">

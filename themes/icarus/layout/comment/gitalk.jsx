@@ -60,7 +60,7 @@ module.exports = cacheComponent(Gitalk, 'comment.gitalk', props => {
     const { helper, comment } = props;
 
     // FIXME: config name change
-    const id = crypto.createHash('md5').update(helper.get_path_end_str(props.page.path)).digest('hex');
+    const id = crypto.createHash('md5').update(helper.get_path_end_str(props.page.path,props.page.uniqueId)).digest('hex');
 
     let canComments = props.page.comments;
     return {

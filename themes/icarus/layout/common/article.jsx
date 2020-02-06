@@ -27,7 +27,7 @@ module.exports = class extends Component {
 
         const isGitalk = comment.type != 'undefined' && comment.type == 'gitalk';
 
-        const id = crypto.createHash('md5').update(helper.get_path_end_str(page.path)).digest('hex');
+        const id = crypto.createHash('md5').update(helper.get_path_end_str(page.path,page.uniqueId)).digest('hex');
 
 
         return <Fragment>
