@@ -113,3 +113,5 @@ function isNightRange(beginTime, endTime) {
         return false;
     }
 }
+
+var btoa = (typeof window !== 'undefined' && window.btoa && window.btoa.bind(window));

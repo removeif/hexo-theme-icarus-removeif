@@ -117,7 +117,6 @@ comments: false
 <div class="time-axis-main">
 	<ul class="time-axis"></ul>
 </div>
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="/js/about-me.js"></script>
 <br>
 <br>

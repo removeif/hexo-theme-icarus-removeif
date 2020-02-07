@@ -152,7 +152,7 @@ class Toc extends Component {
                     {this.renderToc(toc)}
                 </div>
             </div>
-            <script type="text/javascript" dangerouslySetInnerHTML={{ __html: js }}></script>
+            <script type="text/javascript" dangerouslySetInnerHTML={{ __html: js }} async={true}></script>
         </div>;
     }
 }

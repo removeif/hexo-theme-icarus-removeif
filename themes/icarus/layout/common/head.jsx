@@ -142,12 +142,12 @@ module.exports = class extends Component {
             <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;subset=latin,latin-ext"/>
             <Plugins site={site} config={config} helper={helper} page={page} head={true} />
             <link rel="stylesheet" href={url_for('/css/style.css')} />
+            <script src={cdn('jquery', '3.3.1', 'dist/jquery.min.js')}></script>
             <script src={url_for('/js/globalUtils.js')}></script>
             {adsenseClientId ? <script data-ad-client={adsenseClientId}
                 src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" async={true}></script> : null}
             {config.live2Dswitch == 'on' ?<div>
                 <link rel="stylesheet" href={url_for('/live2d/waifu.css')}/>
-                <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
                 <script type="text/javascript" async={true} src={url_for('/live2d/autoload.js')}></script></div>: null}
         </head>;
     }

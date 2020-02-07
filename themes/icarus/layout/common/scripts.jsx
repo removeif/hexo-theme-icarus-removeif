@@ -43,7 +43,6 @@ module.exports = class extends Component {
         };`;
 
         return <Fragment>
-            <script src={cdn('jquery', '3.3.1', 'dist/jquery.min.js')}></script>
             <script src={cdn('moment', '2.22.2', 'min/moment-with-locales.min.js')}></script>
             <script dangerouslySetInnerHTML={{ __html: `moment.locale("${language}");` }}></script>
             <script dangerouslySetInnerHTML={{ __html: embeddedConfig }}></script>
