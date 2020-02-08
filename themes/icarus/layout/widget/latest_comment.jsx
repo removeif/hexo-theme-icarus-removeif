@@ -11,7 +11,7 @@ class LatestComment extends Component {
 
         return <div class="card widget">
             <div class="card-content">
-                <h3 class="menu-label">最新评论</h3><span class="body_hot_comment">加载中，最新评论有10分钟延迟...</span>
+                <h3 class="menu-label">最新评论</h3><span class="body_hot_comment">加载中，最新评论有1分钟延迟...</span>
             </div>
             </div>
     }

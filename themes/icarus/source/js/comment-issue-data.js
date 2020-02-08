@@ -143,7 +143,8 @@ function addCommentInfo(result,resultArr,item,endIndex,i,contentStr){
         var resultMap = {};
         resultMap["date"] = new Date().getTime();
         resultMap["data"] = resultArr;
-        if (resultArr.length > 0) {
+        // 至少6条以上才缓存，有时候走到这里还没处理完，条数不够
+        if (resultArr.length > 6) {
             localStorage.setItem(COMMENT_CACHE_KEY, JSON.stringify(resultMap));
         }
     }
