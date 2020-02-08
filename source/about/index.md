@@ -103,13 +103,6 @@ comments: false
 
 <br>
 
-#### 刷新一句诗
-
----
-
-<div id="poetry-container-time"></div><div id="poetry-container"></div>
-<br>
-
 #### 时间轴记录
 
 ---
