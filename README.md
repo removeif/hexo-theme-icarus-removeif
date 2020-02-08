@@ -1,10 +1,13 @@
-# 话不多说，先看两张图
-## 首页
-![首页](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191104185039.png)
-## night模式
-![night模式](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191216235632.png)
-## 文章
-![文章](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191104185116.png)
+**预览图**
++ 首页1
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20200208141757.png)
++ 首页2
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20200208142200.png)
++ 博客文章
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20200208142111.png)
++ 首页深色
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20200208142013.png)
+
 ### 写在前面
 
 博客源码包括两个主题[icarus](http://github.com/ppoffice/hexo-theme-icarus)和[next](https://github.com/iissnan/hexo-theme-next)，在主题基础之上参照各网友博客，以及自己的一些想法做出的一些修改以及增加部分新元素。  
