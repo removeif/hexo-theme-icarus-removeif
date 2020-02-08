@@ -24,6 +24,7 @@
 + 丰富弹性配置about页面
 + 新增弹性配置友链模块
 + 整体布局左右拉伸了一点，紧凑一些
++ 文章页双栏模式、固定导航栏
 + 引入可配置看板娘
 + 归档页加入了一个文章贡献概览
 + 置顶文章的设置
@@ -33,6 +34,7 @@
 + 加入加密文章
 + 碎碎念功能
 + 透明无界样式
++ 简化部分widget数据，加入`查看全部`按钮
 
 ### 二、部分配置说明：
 
@@ -49,10 +51,10 @@ git clone https://github.com/removeif/hexo-theme-icarus-removeif.git
 ```
 #### 开始部分配置：
 **敲黑板！！！！首先全局以及主题中的`_config.yml`配置成自己的对应参数。**
-#### 1.热门推荐，最新评论，文章评论数：
+#### 1.热门推荐，最新评论：
 **仅针对gitalk评论有效，如果配置完后显示[本博客](https://removeif.github.io/)相关评论、推荐，请详细阅读这一条**  
-文件路径：themes/icarus/source/js/comment-issue-data.js  
-以下引号里的地址改成自己对应的博客评论的issues的仓库相关的值。
+热门推荐，最新评论，文章评论数关联的js文件路径：themes/icarus/source/js/comment-issue-data.js  
+以下引号里的地址改成自己对应的博客评论的issues的仓库相关的值。repoIssuesUrl改两个值（removeif和blog_comment改成自己对应的）
 ```yaml
 // 评论issues仓库 by.removeif https://removeif.github.io/
 var repoIssuesUrl = "https://api.github.com/repos/removeif/blog_comment/issues"; // removeif：用户名，blog_comment：评论的issue仓库
@@ -62,11 +64,7 @@ var clientSecret = "79c7c9cb847e141757d7864453bcbf89f0655b24";
 ```
 github api 详情可以参照[官方api说明](https://developer.github.com/v3/#rate-limiting)  
 关于配置暴露client_id和client_secret安全性问题，gitalk作者有[解释](https://github.com/gitalk/gitalk/issues/150)  
-+ 获取或修改 GitHub 用户数据，需要 token，为了拿到 token，除了需要 OAuth App 的 client_id 和 client_secret 外，还需要一个 Authorization Code。
-+ 这个 code 是 GitHub 登录授权完成时，在跳转回 redirect_uri 的查询参数拿到的， redirect_uri 必须是在 OAuth App 配置的 callback URL 域名下。
-+ 这样即使别人用了你的 client_id 和 client_secret ，跳转之后也拿不到 code，所以，有 client_id 和 client_secret 也做不了什么。
-
-对应主题中要开启`gitalk评论，相应的最新评论、热门推荐、文章中评论数都需要依靠gitalk评论，如果使用主题中其他评论请删掉(2019.10.17已加上判断逻辑不用删掉了)此三个模块，以免出错`，如下配置xxx换成自己的，否则无效。
+对应主题中的`_config.yml`要开启如下配置，xxx换成自己的，否则无效。
 ```yaml
 comment:
     type: gitalk
@@ -77,108 +75,57 @@ comment:
     admin: xxx  #此账户一般为用户名 GitHub user name 文章中能创建issue需要此用户登录才可以，点了创建issue后刷新一遍才能看到！！！！
     create_issue_manually: true
     distraction_free_mode: true
+    has_hot_recommend: true # 是否有热门推荐
+    has_latest_comment: true #是否有最新评论
 ```
 说明：
++ `has_hot_recommend: true` 是否开启首页热评，false-不开启，true-开启
++ `has_latest_comment: true` 是否开启最新评论，false-不开启，true-开启
 + 热门推荐数据为评论数最多的文章，🔥后面的数字：根据文章的评论数*101 。  
 + 最新评论：为该仓库下，所有issue中的最新评论。  
-+ 目前的最新评论有10分钟的本地缓存，评论后可能10分钟后才能看见最新评论，出于性能优化，每次请求接口处理还是挺耗时，comment-issue-data.js中可以自己去掉。  
-
-文章评论数图标对应的文件为：themes/icarus/layout/common/article.ejs，不需要的自行删掉以下两行
-```yaml
-<span class="display-none-class"><%- md5(post.path) %></span>
-<img class="not-gallery-item" src="/images/chat.svg">&nbsp;<span class="level-item has-text-grey" id=<%- md5(post.path) %>>99+</span></img>           
-```  
-
-如果不使用热门推荐，删掉themes/icarus/layout/index.ejs中以下代码
-```js
-<% if (page.path == 'index.html' && get_config('comment.type') !== undefined && get_config('comment.type') == 'gitalk'){ %>
-    <div class="card widget">
-        <div class="card-content">
-        <h3 class="menu-label">热门推荐</h3><span class="menu-label1" id="index_hot_div">加载中，稍等几秒...</span>
-        </div>
-    </div>
-<% } %>
-```
-如果不使用最新评论，删掉themes/icarus/_config.yml中widgets:节点下代码
-```yaml
-    -
-        # Widget name
-        type: latest_comment
-        # Where should the widget be placed, left or right
-        position: right
-```
++ 目前的最新评论有1分钟的本地缓存，评论后可能1分钟后才能看见最新评论，出于性能优化，每次请求接口处理还是挺耗时，comment-issue-data.js中可以自己去掉。  
 
 #### 2.友链数据文件：
 文件路径：themes/icarus/source/js/friend.js  
-相应格式配置就好。
-
+相应格式增加自己需要的数据。
 
 #### 3.影音数据文件：
 文件路径： 
 音乐：themes/icarus/source/json_data/music.json  
 视频：themes/icarus/source/json_data/video.json    
-相应格式配置就好。     
+相应格式增加自己需要的数据。    
         
 #### 4.关于页面时间轴记录数据文件：
 文件路径：themes/icarus/source/json_data/record.json   
-相应格式配置就好。
-相关的js在各自页面的.md文件中可以找到。
+相应格式增加自己需要的数据。
 
 #### 5.看板娘配置
-具体文件引用位置：themes/icarus/layout/layout.ejs  
- ```js
-<script type="text/javascript" async="" src="/live2d/autoload.js"></script>
-```
-不喜欢的可以直接删了，就不显示了。  
-themes/icarus/source/live2d/waifu-tips.js  
-themes/icarus/source/live2d/autoload.js   
-上面两个位置可以配置相关的显示，以及模型。
-`2.0版本之后只需要在_config.yml配置即可`
+主题中的`_config.yml`配置如下设置
 ```text
 live2Dswitch: off #live2D开关 on为打开,off为关闭
 ```
 
 #### 6.置顶设置：
-.md文章文件中头部加入了top字段，初始值是100，如果要置顶，需要设置为大于100的值，值越大越靠前。相等时，根据时间降序。(v2.0之前)  
-`v2.0之后，默认不加入top,top值越大越靠前，大于0显示置顶图标。`
-**v2.0之后**修改依赖包中文件removeif/node_modules/hexo-generator-index/lib/generator.js如下：
+.md文章头部数据中加入top值，top值越大越靠前，大于0显示置顶图标。
+修改依赖包中文件removeif/node_modules/hexo-generator-index/lib/generator.js如下：
 ```js 
 'use strict';
-
 const pagination = require('hexo-pagination');
-
 module.exports = function(locals){
     var config = this.config;
     var posts = locals.posts;
     posts.data = posts.data.sort(function(a, b) {
-
-
         if(a.top == undefined){
             a.top = 0;
         }
         if(b.top == undefined){
             b.top = 0;
         }
-
         if(a.top == b.top){
             return b.date - a.date;
         }else{
            return b.top - a.top;
         }
-        //
-        // console.log("a.top="+a.top+",b.top="+b.top)
-        //
-        // if(a.top && b.top) { // 两篇文章top都有定义
-        //     if(a.top == b.top) return b.date - a.date; // 若top值一样则按照文章日期降序排
-        //     else return b.top - a.top; // 否则按照top值降序排
-        // }
-        // else if(a.top && !b.top) { // 以下是只有一篇文章top有定义，那么将有top的排在前面（这里用异或操作居然不行233）
-        //     return -1;
-        // }
-        // else if(!a.top && b.top) {
-        //     return 1;
-        // }
-        // else return b.date - a.date; // 都没定义按照文章日期降序排
     });
     var paginationDir = config.pagination_dir || 'page';
     return pagination('', posts, {
@@ -192,10 +139,10 @@ module.exports = function(locals){
 };
 ```
 #### 7.配置文章中推荐文章模块  
-根据配置的recommend值（必须大于0），越大越靠前，相等取最新的，最多取5条。recommend配置在.md文章头中，如下  
+根据配置的recommend值（必须大于0），值越大越靠前，相等取最新的，最多取5条。recommend（6.中top值也在下面示例）配置在.md文章头中，如下  
 ```yaml
 title: 博客源码分享
-top: 102
+top: 1
 toc: true
 recommend: 1 
 keywords: categories-github
@@ -205,7 +152,7 @@ tags: 工具教程
 categories: [工具教程,主题工具]
 ```
 #### 8.文章中某个代码块折叠的方法
-代码块头部加入标记 "`>folded`"，如下。
+代码块头部加入标记 `>folded`，如下代码块中使用。
 ```java main.java >folded
     // 使用示例，.md 文件中头行标记">folded"
     // ```java main.java >folded
@@ -216,17 +163,10 @@ categories: [工具教程,主题工具]
     //     return i;
     // }
     // \\``` 
-import main.java
-private static void main(){
-  // test
-    int i = 0;
-    return i;
-}
 ```
 #### 9.加入加密文章
 如下需要加密的文章头部加入以下代码
 ```text
-
 ---
 title: 2019成长记01
 top: -1
@@ -242,9 +182,9 @@ wrong_pass_message: 不好意思，密码没对哦，在检查检查呢！
 wrong_hash_message: 不好意思，信息无法验证！
 ---
 ```
-加密文章不会出现在最新文章列表widget中，也不会出现在文章中推荐列表中，首页列表中需要设置top: -1 让它排在最后。
+注：**加密文章不会出现在最新文章列表widget中，也不会出现在文章中推荐列表中，首页列表中需要设置top: -1 让它排在最后比较合理一些。**
 #### 10.碎碎念的使用
-在github中，创建碎碎念issue，并且打上对应的label（`eg:666666`），填写到source/self-talking/index.md文件中如下,
+在github中，创建碎碎念issue，并且打上对应的label（`eg:666666`）对应配置中为id，填写到source/self-talking/index.md文件中如下对应位置，其余配置也要改成自己的，如clientID等。
 ```js
 <script>
     var gitalk = new Gitalk({
@@ -311,6 +251,11 @@ body:not(.night) .post-navigation:hover{
 ```
 如下：
 ![无界样式](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20200119180859.png)
+#### 精简部分widget数据
+widget中的归档和分类和标签精简了，数据多时很丑，改为了分别展示5条和10条和20条，增加了查看全部。
+![查看全部](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20200119181201.png)
+
+原来已有博客文章的迁移，只需要把原来对应的文章放到source/_posts里即可。然后去对应文章下面创建评论issue。  
 #### 以上配置好后
 ```yaml
 $ npm install hexo --save #安装依赖包（只需要执行一次）
@@ -320,18 +265,19 @@ $ hexo s #启动服务
 $ hexo d #推到远程 
 ```
 安装依赖包（只需要执行一次），以后修改了代码 只需要执行后面几条就好。  
-原来已有博客文章的迁移，只需要把原来对应的文章放到source/_posts里即可。然后去对应文章下面创建评论issue。  
-widget中的归档和分类和标签精简了，分别展示5条和10条和20条，增加了查看全部。
-![查看全部](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20200119181201.png)
 
-enjoy！！！！👏👏👏👏👏👏👏
+ok,enjoy it！👏👏👏
 
 ### 写在后面
 如果你有问题请反馈: [issues](https://github.com/removeif/hexo-theme-icarus-removeif/issues) （请务必先于issues中寻找答案）  
 如果你喜欢该主题: [star](https://github.com/removeif/hexo-theme-icarus-removeif)  
 如果你想定制主题: [fork](https://github.com/removeif/hexo-theme-icarus-removeif) 
 
-### 文章中横竖图demo；对于横竖图推荐分开使用，且长宽一致的，如统一手机拍照、电脑截图
+### License
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/removeif/hexo-theme-icarus-removeif/blob/master/LICENSE) file for details.
+
+### 其余主题彩蛋
+**文章中横竖图demo；对于横竖图推荐分开使用，且长宽一致的，如统一手机拍照、电脑截图**
 使用方法：md文章中放入以下代码
 ```html
 
@@ -357,15 +303,9 @@ enjoy！！！！👏👏👏👏👏👏👏
 #### 效果如下（多图左右拉查看）
 [查看效果](https://removeif.github.io/theme/%E5%8D%9A%E5%AE%A2%E6%BA%90%E7%A0%81%E5%88%86%E4%BA%AB.html#效果如下（多图左右拉查看）)
 
-### License
-This project is licensed under the MIT License - see the [LICENSE](https://github.com/removeif/hexo-theme-icarus-removeif/blob/master/LICENSE) file for details.
-
-### 博客快照：
+### 主题快照：
 + 主页
-![v4](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191022182226.png)
-![v3](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191018114126.png)
-![v2](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191014183620.png)
-![v1](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221347.png)
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191022182226.png)
 + 置顶
 ![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190926210437.png)
 + 文章评论数
