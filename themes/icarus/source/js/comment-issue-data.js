@@ -134,6 +134,10 @@ function addCommentInfo(result,resultArr,item,endIndex,i,contentStr){
     });
     // 请求完之后渲染
     if(endIndex == i){
+        // 排序
+        resultArr = resultArr.sort(function (a, b) {
+            return b.date.localeCompare(a.date);
+        });
         renderCommentData(resultArr);
         // 存入缓存
         var resultMap = {};
