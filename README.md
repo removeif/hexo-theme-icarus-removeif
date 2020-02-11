@@ -35,6 +35,7 @@
 + 碎碎念功能
 + 透明无界样式
 + 简化部分widget数据，加入`查看全部`按钮
++ gitalk评论增加评论开关，评论列表中标记博主
 
 ### 二、部分配置说明：
 
@@ -254,6 +255,10 @@ body:not(.night) .post-navigation:hover{
 #### 精简部分widget数据
 widget中的归档和分类和标签精简了，数据多时很丑，改为了分别展示5条和10条和20条，增加了查看全部。
 ![查看全部](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20200119181201.png)
+
+#### gitalk评论增加评论开关，评论列表中标记博主
+需要关闭评论的在文章头部加入 `comments: false`,原来已经评论的依然会显示，如下
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20200211151129.png)
 
 原来已有博客文章的迁移，只需要把原来对应的文章放到source/_posts里即可。然后去对应文章下面创建评论issue。  
 #### 以上配置好后
