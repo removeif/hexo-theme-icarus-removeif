@@ -29,6 +29,14 @@ class Profile extends Component {
             followTitle,
             socialLinks
         } = this.props;
+
+        const hitokotoJs = `$(function (){ $.getJSON("https://v1.hitokoto.cn/", function (data) {
+                                if(data){
+                                    $('#hitokoto').html("");
+                                    $('#hitokoto').append("<strong>"+data.hitokoto+"</strong>"+
+                                    "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
+                                }})});`;
+
         return <div class="card widget">
             <div class="card-content">
                 <nav class="level">
@@ -78,7 +86,7 @@ class Profile extends Component {
                 {this.renderSocialLinks(socialLinks)}
                 <hr/>
                 <p id="hitokoto">:D 一言句子获取中...</p>
-                <script src="https://v1.hitokoto.cn/?encode=js&select=%23hitokoto" defer></script>
+                <script type="text/javascript" dangerouslySetInnerHTML={{ __html: hitokotoJs }} defer={true}></script>
             </div>
         </div>;
     }
