@@ -36,6 +36,7 @@
 + 透明无界样式
 + 简化部分widget数据，加入`查看全部`按钮
 + gitalk评论增加评论开关，评论列表中标记博主
++ 还有什么新的，好的feature欢迎大家随时提出来，有能力有时间就做出来
 
 ### 二、部分配置说明：
 
@@ -277,7 +278,6 @@ ok,enjoy it！👏👏👏
 如果你有问题请反馈: [issues](https://github.com/removeif/hexo-theme-icarus-removeif/issues) （请务必先于issues中寻找答案）  
 如果你喜欢该主题: [star](https://github.com/removeif/hexo-theme-icarus-removeif)  
 如果你想定制主题: [fork](https://github.com/removeif/hexo-theme-icarus-removeif) 
-
 ### License
 This project is licensed under the MIT License - see the [LICENSE](https://github.com/removeif/hexo-theme-icarus-removeif/blob/master/LICENSE) file for details.
 
@@ -310,7 +310,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 
 ### 主题快照：
 + 主页
-![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191022182226.png)
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20200208141757.png)
 + 置顶
 ![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190926210437.png)
 + 文章评论数
@@ -318,7 +318,7 @@ This project is licensed under the MIT License - see the [LICENSE](https://githu
 + 推荐文章模块
 ![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191107131513.png)
 + 归档
-![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221733.png)
+![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20200214190807.png)
 + 留言
 ![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190919221820.png)
 + 友链
