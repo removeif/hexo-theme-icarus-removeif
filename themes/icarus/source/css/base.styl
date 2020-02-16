@@ -1181,58 +1181,18 @@ a.navbar-item.is-active,
     overflow: auto;
 }
 
+
+.navbar-highlight {
+    background-color #fff !important;
+}
+
 .gt-container .gt-comment-owner {
-     padding: 0.2em 0.2em !important;
-     font-size: 0.875em !important;
-     margin: 0 0.5em 0 0.5em !important;
- }
+    padding: 0.2em 0.2em !important;
+    font-size: 0.875em !important;
+    margin: 0 0.5em 0 0.5em !important;
+}
 
 // ============self-talking  end
-
-
-//=================本博客使用样式   start
-
-//// 首页去图
-//.body_hot_comment .comment-content .card-comment-item .ava, .media-left, .is-6-widescreen .card-image {
-//    display: none;
-//}
-//
-//hover-color = #deeafb;
-//// 去card
-//.card {
-//    background-color: unset;
-//    box-shadow: unset;
-//}
-//
-//.navbar, footer.footer {
-//    background-color: unset;
-//}
-//
-//body:not(.night) .navbar:hover,
-//body:not(.night) .footer:hover,
-//body:not(.night) .card:hover,
-//body:not(.night) .pagination:hover,
-//body:not(.night) .post-navigation:hover{
-//    background-color: hover-color;
-//    box-shadow: 0 4px 10px rgba(0,0,0,0.05),0 0 1px rgba(0,0,0,0.1);
-//}
-//
-//.pagination, .post-navigation{
-//    padding: 10px;
-//}
-//
-//.pagination .pagination-link:not(.is-current), .pagination .pagination-previous, .pagination .pagination-next {
-//    background-color:rgba(255,255,255,0);
-//}
-//
-//.timeline .media:last-child:after {
-//    background: unset;
-//}
-//.content .gt-container .gt-comment-admin .gt-comment-content {
-//    border: 2px solid #deeafb;
-//}
-
-//=================本博客使用样式   end
 
 // night Mode
 // author by removef
@@ -1245,6 +1205,9 @@ night-link = #3273dc
 
     color: silver!important;
 
+    .navbar-highlight{
+        background-color night-color !important;
+    }
     background-color black;
     .content blockquote {
         background-color: night-color
@@ -1603,4 +1566,57 @@ night-link = #3273dc
     .friend-card-item {
         color: unset;
     }
+
 }
+
+////=================本博客使用样式   start
+//
+//// 首页去图
+//.body_hot_comment .comment-content .card-comment-item .ava, .media-left, .is-6-widescreen .card-image {
+//    display: none;
+//}
+//
+//hover-color = #deeafb;
+//// 去card
+//.card {
+//    background-color: unset;
+//    //box-shadow: unset;
+//}
+//
+//.navbar, footer.footer {
+//    background-color: unset;
+//}
+//
+//body:not(.night) .navbar:hover,
+//body:not(.night) .footer:hover,
+//body:not(.night) .card:hover,
+//body:not(.night) .pagination:hover,
+//body:not(.night) .post-navigation:hover{
+//    background-color: hover-color;
+//    box-shadow: 0 4px 10px rgba(0,0,0,0.05),0 0 1px rgba(0,0,0,0.1);
+//}
+//
+//.pagination, .post-navigation{
+//    padding: 10px;
+//}
+//
+//.pagination .pagination-link:not(.is-current), .pagination .pagination-previous, .pagination .pagination-next {
+//    background-color:rgba(255,255,255,0);
+//}
+//
+//.timeline .media:last-child:after {
+//    background: unset;
+//}
+//
+//.footer {
+//    box-shadow: 0px 4px 10px 10px rgba(0,0,0,0.05);
+//    padding: 3rem 1.5rem 2rem;
+//}
+//
+//
+//@media screen and (max-width: 1087px)
+//    .navbar-menu {
+//        background-color: unset;
+//    }
+//
+////=================本博客使用样式   end

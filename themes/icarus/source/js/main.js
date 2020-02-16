@@ -138,7 +138,12 @@
         if (!sitehost) return false;
 
         // handle relative url
-        const data = new URL(input, 'http://' + sitehost);
+        var data;
+        try {
+            data = new URL(input, 'http://' + sitehost);
+        } catch (e) {
+            return false;
+        }
 
         // handle mailto: javascript: vbscript: and so on
         if (data.origin === 'null') return false;
@@ -177,3 +182,25 @@
         });
     }
 }(jQuery, window.moment, window.ClipboardJS, window.IcarusThemeSettings));
+
+$(document).ready(function () {
+    /* 添加背景色 */
+    var navbar = $(".is-fixed-top");
+    var navbar1 = $(".justify-content-start");
+    if (navbar.offset().top > 12) {
+        navbar.addClass("navbar-highlight");
+        navbar1.addClass("navbar-highlight");
+    } else {
+        navbar.removeClass("navbar-highlight");
+        navbar1.removeClass("navbar-highlight");
+    }
+    $(window).scroll(function () {
+        if (navbar.offset().top > 12) {
+            navbar.addClass("navbar-highlight");
+            navbar1.addClass("navbar-highlight");
+        } else {
+            navbar.removeClass("navbar-highlight");
+            navbar1.removeClass("navbar-highlight");
+        }
+    });
+});
