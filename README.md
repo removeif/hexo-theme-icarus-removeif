@@ -252,7 +252,7 @@ body:not(.night) .post-navigation:hover{
 //=================本博客使用样式   end
 ```
 如下：
-![无界样式](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20200119180859.png)
+![无界样式](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20200218084713.png)
 #### 精简部分widget数据
 widget中的归档和分类和标签精简了，数据多时很丑，改为了分别展示5条和10条和20条，增加了查看全部。
 ![查看全部](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20200119181201.png)
