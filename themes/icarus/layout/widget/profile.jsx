@@ -30,12 +30,14 @@ class Profile extends Component {
             socialLinks
         } = this.props;
 
-        const hitokotoJs = `$(function (){ $.getJSON("https://v1.hitokoto.cn/", function (data) {
+        const hitokotoJs = `function getYiyan(){
+                                $.getJSON("https://v1.hitokoto.cn/", function (data) {
                                 if(data){
                                     $('#hitokoto').html("");
-                                    $('#hitokoto').append("<strong>"+data.hitokoto+"</strong>"+
+                                    $('#hitokoto').append("<strong style='color: #3273dc;'>"+data.hitokoto+"</strong>"+
                                     "<p>"+"来源《"+data.from+"》</p><p>提供者-"+data.creator+"</p>");
-                                }})});`;
+                                }});}
+                                $(function (){getYiyan();$('#hitokoto').click(function(){getYiyan();})});`;
 
         return <div class="card widget">
             <div class="card-content">
