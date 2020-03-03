@@ -1,13 +1,17 @@
 ---
 title: 博客中gitalk最新评论的获取
-
 toc: true
 recommend: 2
 keywords: categories-comment
+thumbnail: 'https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190913010935.png'
+tags:
+  - icarus主题配置
+  - hexo主题
+categories:
+  - 工具教程
+  - 主题工具
+abbrlink: 47c45f64
 date: 2019-09-13 01:03:06
-thumbnail: https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20190913010935.png
-tags: [icarus主题配置,hexo主题]
-categories: [工具教程,主题工具]
 ---
 
 > 博客中，对于网友的评论以及每篇文章的评论数还是很重要的。但是基于静态的页面想要存储动态的评论数据是比较难的，一般博客主题中都内置了评论插件，但是博客主题中对于最新评论的支持显示还是很少的，至少目前我是没怎么发现。博客 Powered by [Hexo](http://hexo.io/) & [Icarus](http://github.com/ppoffice/hexo-theme-icarus)，采用[Gitalk](https://github.com/gitalk/gitalk)评论，再次感谢此三位作者的辛勤码代码，才有了以下的内容。基于此背景基础上，聊聊最新评论的实现。
