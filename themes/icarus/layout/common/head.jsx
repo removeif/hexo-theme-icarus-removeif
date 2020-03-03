@@ -140,6 +140,7 @@ module.exports = class extends Component {
             <link rel="stylesheet" href={fontcdn('Ubuntu:400,600|Source+Code+Pro')} />
             {hlTheme ? <link rel="stylesheet" href={cdn('highlight.js', '9.12.0', 'styles/' + hlTheme + '.css')} /> : null}
             <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Monda:300,300italic,400,400italic,700,700italic|Roboto Slab:300,300italic,400,400italic,700,700italic|Microsoft YaHei:300,300italic,400,400italic,700,700italic|PT Mono:300,300italic,400,400italic,700,700italic&amp;subset=latin,latin-ext"/>
+            {/* <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inconsolata|Itim|Lobster.css"/> */}
             <Plugins site={site} config={config} helper={helper} page={page} head={true} />
             <link rel="stylesheet" href={url_for('/css/style.css')} />
             <script src={cdn('jquery', '3.3.1', 'dist/jquery.min.js')}></script>
