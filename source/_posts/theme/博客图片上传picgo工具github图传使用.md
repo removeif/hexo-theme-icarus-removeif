@@ -1,12 +1,14 @@
 ---
 title: 博客图片上传picgo工具github图传使用
-
 toc: true
 keywords: java
-date: 2019-06-20 17:31:57
-thumbnail: https://cdn.jsdelivr.net/gh/removeif/blog_image/20190620173650.png
+thumbnail: 'https://cdn.jsdelivr.net/gh/removeif/blog_image/20190620173650.png'
 tags: 工具教程
-categories: [工具教程,主题工具]
+categories:
+  - 工具教程
+  - 主题工具
+abbrlink: 9e7c733f
+date: 2019-06-20 17:31:57
 ---
 > 摘要
 对于每一个写博客的人来说，图片是至关重要。这一路经历了多次图片的烦恼，之前选择了微博个人文章那里粘贴图片的方式上传，感觉也挺方便的。但是由于新浪的图片显示问题，如果header中不设置<!-- <meta name="referrer" content="no-referrer" /> 解决图片过期问题--> 标签就不能异步访问图片，导致图裂，那之恶心。然而设置之后又与网站访客统计的插件冲突，使之不能统计，真是神仙打架。无赖之下使用了PicGo工具，使用后感觉真XX方便！
