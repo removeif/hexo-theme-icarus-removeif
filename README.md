@@ -47,6 +47,21 @@ v11.1.0
 192:hexo-theme-icarus-removeif xx$ npm -v
 6.4.1
 ```  
+注意文章模板文件中的配置 /scaffolds/post.md
+```text
+---
+thumbnail:
+title: {{ title }}
+date: {{ date }}
+tags:
+categories: 
+toc: true
+recommend: 1
+keywords: categories-java
+uniqueId: {{ date }}/{{ title }}.html
+---
+```
+`uniqueId` 文章唯一标识，用于评论issue的id
 #### 克隆博客代码到本地
 ```jshelllanguage
 git clone https://github.com/removeif/hexo-theme-icarus-removeif.git

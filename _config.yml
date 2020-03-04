@@ -16,7 +16,9 @@ timezone:
 url: https://removeif.github.io
 #root: /remove.io/
 root: /
-permalink: posts/:abbrlink/ #文章的 永久链接 格式	:year/:month/:day/:title/
+# 可选 permalink: abbrlink 短链接模式
+# permalink: :title.html #文章的url 如 http://localhost:4000/theme/博客源码分享.html 格式   :year/:month/:day/:title/
+permalink: posts/:abbrlink/ #文章的永久链接 或者 permalink: posts/:abbrlink.html 如：http://localhost:4000/post/abaf7e89.html
 permalink_defaults:
 
 # abbrlink config
