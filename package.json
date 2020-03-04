@@ -16,6 +16,7 @@
     "bulma-stylus": "0.8.0",
     "deepmerge": "^4.2.2",
     "hexo": "^4.2.0",
+    "hexo-abbrlink": "^2.0.5",
     "hexo-blog-encrypt": "^3.0.3",
     "hexo-deployer-git": "^2.1.0",
     "hexo-generator-archive": "^1.0.0",

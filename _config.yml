@@ -16,8 +16,13 @@ timezone:
 url: https://removeif.github.io
 #root: /remove.io/
 root: /
-permalink: :title.html #文章的 永久链接 格式	:year/:month/:day/:title/
+permalink: posts/:abbrlink/ #文章的 永久链接 格式	:year/:month/:day/:title/
 permalink_defaults:
+
+# abbrlink config
+abbrlink:
+  alg: crc32  #support crc16(default) and crc32
+  rep: hex    #support dec(default) and hex
 
 # Directory
 source_dir: source

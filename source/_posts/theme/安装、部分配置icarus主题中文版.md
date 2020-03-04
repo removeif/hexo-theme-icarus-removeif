@@ -1,12 +1,16 @@
 ---
 title: 安装、部分配置icarus主题中文版
-categories: [工具教程,主题工具]
-
+categories:
+  - 工具教程
+  - 主题工具
 toc: true
 keywords: java
+thumbnail: 'https://blog.zhangruipeng.me/hexo-theme-icarus/gallery/preview.png'
+tags:
+  - icarus主题配置
+  - hexo主题
+abbrlink: 52c38f29
 date: 2019-02-28 10:36:56
-thumbnail: https://blog.zhangruipeng.me/hexo-theme-icarus/gallery/preview.png
-tags: [icarus主题配置,hexo主题]
 ---
 > 摘要
 发现icarus主题还不错，花了一两个小时研究了下安装、部分配置icarus主题中文版

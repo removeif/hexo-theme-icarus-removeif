@@ -1,13 +1,15 @@
 ---
 title: github Issue 作为博客微型数据库的应用
-
 toc: true
 recommend: 1
 keywords: categories-github issue
-date: 2019-11-28 22:02:05
-thumbnail: https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191128220618.png
+thumbnail: 'https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2019/20191128220618.png'
 tags: 工具教程
-categories: [工具教程,主题工具]
+categories:
+  - 工具教程
+  - 主题工具
+abbrlink: e7fe3cc
+date: 2019-11-28 22:02:05
 ---
 
 ### 背景
