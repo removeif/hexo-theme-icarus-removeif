@@ -288,7 +288,7 @@ widget中的归档和分类和标签精简了，数据多时很丑，改为了�
 
 #### 以上配置好后
 ```yaml
-$ npm install hexo --save #安装依赖包（只需要执行一次）
+$ npm install #安装依赖包（只需要执行一次）
 $ hexo clean #清除缓存
 $ hexo g #编译 
 $ hexo s #启动服务 
