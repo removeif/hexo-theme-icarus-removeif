@@ -98,7 +98,7 @@ ignore:
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: icarus
+theme: amazing
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
