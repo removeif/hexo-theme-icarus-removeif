@@ -1,4 +1,4 @@
-**此仓库不在当独维护，请移步至纯主题仓库[hexo-theme-amazing](https://github.com/removeif/hexo-theme-amazing)**
+**此仓库不在单独维护，请移步至纯主题仓库[hexo-theme-amazing](https://github.com/removeif/hexo-theme-amazing)**
 
 <br/>
 
