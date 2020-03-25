@@ -1,3 +1,7 @@
+**此仓库不在当独维护，请移步至纯主题仓库[hexo-theme-amazing](https://github.com/removeif/hexo-theme-amazing)**
+
+<br/>
+
 **预览图**
 + 首页1
 ![](https://cdn.jsdelivr.net/gh/removeif/blog_image/img/2020/20200208141757.png)
