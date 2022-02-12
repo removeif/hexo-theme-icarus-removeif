@@ -12,7 +12,7 @@
     "version": "4.2.0"
   },
   "dependencies": {
-    "ajv": "^6.10.2",
+    "ajv": "^6.12.3",
     "bulma-stylus": "0.8.0",
     "deepmerge": "^4.2.2",
     "hexo": "^4.2.0",
